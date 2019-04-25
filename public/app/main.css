@@ -1,70 +1,6 @@
 @charset "UTF-8";
-.button {
-  padding: 0 20px;
-  color: #46BAD8;
-  border: 1px solid #53BFDB;
-  border-radius: 3px;
-  background: white;
-  box-sizing: border-box; }
-
-.button.button-flat {
-  height: 60px;
-  min-width: 360px;
-  color: white;
-  border: 0;
-  background: #46BAD8;
-  font-size: 1.14286rem;
-  font-weight: bold; }
-  .button.button-flat.weak {
-    background: #839299; }
-  .button.button-flat.accent {
-    background: #D654BC; }
-
-.button.button-stroked {
-  height: 60px;
-  min-width: 360px;
-  color: #46BAD8;
-  border: 1px solid #53BFDB;
-  font-size: 1.14286rem;
-  font-weight: bold; }
-  .button.button-stroked.weak {
-    color: #839299;
-    border-color: #839299; }
-  .button.button-stroked.accent {
-    color: #D654BC;
-    border-color: #D654BC; }
-
-.chip.chip-basic {
-  width: 92px;
-  height: 25px;
-  line-height: 25px;
-  padding: 0 10px;
-  display: inline-block;
-  background: #53BFDB;
-  border-radius: 3px;
-  box-sizing: border-box;
-  text-align: center; }
-  .chip.chip-basic .chip__title {
-    color: white;
-    font-size: 0.85714rem;
-    font-style: normal;
-    font-weight: bold;
-    vertical-align: middle; }
-
-.chip.chip-basic.accent {
-  background: #E274CB; }
-
-.error {
-  margin: 0 0 0 20px;
-  padding: 0; }
-
-.error__message {
-  padding: 0;
-  font-weight: bold;
-  color: #E274CB; }
-
 html {
-  min-width: 1080px;
+  min-width: 1120px;
   overflow-y: auto;
   overflow-x: auto;
   position: relative; }
@@ -74,14 +10,14 @@ body {
   background: white; }
 
 #nav-global {
-  min-width: 1080px;
+  min-width: 1120px;
   height: 80px;
   margin: auto;
   background: white;
   box-shadow: 0 1px 0 0 #EDEFF0; }
 
 #main-content__layout.layout {
-  width: 1080px;
+  width: 1120px;
   margin: 0 auto;
   letter-spacing: 0;
   white-space: nowrap; }
@@ -99,12 +35,12 @@ body {
   vertical-align: top; }
 
 #main-content__layout.layout > .layout__section.content {
-  width: 840px;
+  width: 880px;
   display: inline-block;
   vertical-align: top; }
 
 .nav-global-simple .content__inner {
-  width: 1080px;
+  width: 1120px;
   height: 80px;
   margin: auto;
   padding: 0 20px;
@@ -240,7 +176,7 @@ body {
   #site-shop-common-breadcrumb-menu .breadcrumb {
     margin: 0 auto;
     padding: 0;
-    width: 1080px;
+    width: 1120px;
     height: 25px;
     list-style: none; }
   #site-shop-common-breadcrumb-menu .breadcrumb__item {
@@ -291,6 +227,70 @@ body {
     text-align: left; }
   .fixed-datatable__cell:last-child {
     text-align: right; }
+
+.button {
+  padding: 0 20px;
+  color: #46BAD8;
+  border: 1px solid #53BFDB;
+  border-radius: 3px;
+  background: white;
+  box-sizing: border-box; }
+
+.button.button-flat {
+  height: 60px;
+  min-width: 360px;
+  color: white;
+  border: 0;
+  background: #46BAD8;
+  font-size: 1.14286rem;
+  font-weight: bold; }
+  .button.button-flat.weak {
+    background: #839299; }
+  .button.button-flat.accent {
+    background: #D654BC; }
+
+.button.button-stroked {
+  height: 60px;
+  min-width: 360px;
+  color: #46BAD8;
+  border: 1px solid #53BFDB;
+  font-size: 1.14286rem;
+  font-weight: bold; }
+  .button.button-stroked.weak {
+    color: #839299;
+    border-color: #839299; }
+  .button.button-stroked.accent {
+    color: #D654BC;
+    border-color: #D654BC; }
+
+.chip.chip-basic {
+  width: 92px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  display: inline-block;
+  background: #53BFDB;
+  border-radius: 3px;
+  box-sizing: border-box;
+  text-align: center; }
+  .chip.chip-basic .chip__title {
+    color: white;
+    font-size: 0.85714rem;
+    font-style: normal;
+    font-weight: bold;
+    vertical-align: middle; }
+
+.chip.chip-basic.accent {
+  background: #E274CB; }
+
+.error {
+  margin: 0 0 0 20px;
+  padding: 0; }
+
+.error__message {
+  padding: 0;
+  font-weight: bold;
+  color: #E274CB; }
 
 html {
   font-size: 14px;
@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
   display: block;
   position: absolute;
-  width: 1080px;
+  width: 1120px;
   margin: auto;
   color: white;
   z-index: 500; }
@@ -503,7 +503,7 @@ h1, h2, h3, h4, h5, h6 {
   #site-recruit-internship-for-summer-21-mentor .content__section.mentor .data-list__inner {
     margin: auto;
     padding: 0;
-    width: 1080px;
+    width: 1120px;
     display: table;
     list-style: none; }
   #site-recruit-internship-for-summer-21-mentor .content__section.mentor .data-list__item {
@@ -553,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 1080px;
+  width: 1120px;
   margin: auto;
   position: absolute;
   background: rgba(255, 255, 255, 0.7);

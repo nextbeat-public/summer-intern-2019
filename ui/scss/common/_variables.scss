@@ -10,36 +10,22 @@ $font-size-base-px: 14px;
 $letter-spacing:    0.05em;
 
 // Font size
-$font-size-none:             0rem;
-$font-size-nano:           1.0rem * (10px / $font-size-base-px);
-$font-size-micro:          1.0rem * (12px / $font-size-base-px);
-$font-size-small:          1.0rem * (13px / $font-size-base-px);
-$font-size-base:           1.0rem;
-$font-size-medium:         1.0rem * (16px / $font-size-base-px);
-$font-size-large:          1.0rem * (18px / $font-size-base-px);
-$font-size-xlarge:         1.0rem * (20px / $font-size-base-px);
-$font-size-2xlarge:        1.0rem * (24px / $font-size-base-px);
+$font-size-none:            0rem;
+$font-size-nano:          1.0rem * (10px / $font-size-base-px);
+$font-size-micro:         1.0rem * (12px / $font-size-base-px);
+$font-size-small:         1.0rem * (13px / $font-size-base-px);
+$font-size-base:          1.0rem;
+$font-size-medium:        1.0rem * (16px / $font-size-base-px);
+$font-size-large:         1.0rem * (18px / $font-size-base-px);
+$font-size-xlarge:        1.0rem * (20px / $font-size-base-px);
+$font-size-2xlarge:       1.0rem * (24px / $font-size-base-px);
 
 // Line height rate
-$line-height-rate-micro:   1.4;
-$line-height-rate-small:   1.5;
-$line-height-rate-base:    1.6;
-$line-height-rate-medium:  1.7;
-$line-height-rate-large:   1.8;
-
-// Font size : Header
-$font-size-h2:      24px;
-$font-size-h3:      36px;
-$font-size-h3-ruby: 14px;
-$font-size-h4:      18px;
-
-// Font size : Number
-$font-size-number:       24px;
-$font-size-number-large: 28px;
-
-// Padding size
-$margin-botton-size-h3: 35px;
-$margin-botton-size-h4: 20px;
+$line-height-rate-micro:  1.4;
+$line-height-rate-small:  1.5;
+$line-height-rate-base:   1.6;
+$line-height-rate-medium: 1.7;
+$line-height-rate-large:  1.8;
 
 // border radisu
 $border-radius-base: 3px;
@@ -52,11 +38,8 @@ $space-size-base:   20px;
 $space-size-small:  15px;
 $space-size-micro:  10px;
 
-$padding-size-inner: 20px;
-$padding-size-outer: 40px;
-
 // Layout
-$globalnav-height:    80px;
-$content-width:       1080px;
-$container-width:     660px;
-$sidenav-width:       240px;
+$content-width:     1120px;
+$container-width:   660px;
+$globalnav-height:  80px;
+$sidenav-width:     240px;
