@@ -5,7 +5,7 @@
  * please view the LICENSE file that was distributed with this source code.
  *@
 
-@import controllers.routes.UIAssets
+@import controllers.routes.Assets
 @import play.twirl.api.TwirlFeatureImports._
 @(path: String, alt: String, classes: String = "", maxSize: Int = 2)
 
@@ -13,9 +13,9 @@
 @srcset(fname: String, ext: String, maxSize: Int) = {
   @for(size <- 1 to maxSize) {
     @if(size <= 1) {
-      @UIAssets.versioned(fname + ext) @(size + "x")
+      @Assets.versioned(fname + ext) @(size + "x")
     } else {
-      @UIAssets.versioned(fname + "@" + size + "x" + ext) @(size + "x")
+      @Assets.versioned(fname + "@" + size + "x" + ext) @(size + "x")
     }
     @if(size < maxSize) { , }
   }
@@ -29,7 +29,7 @@
   <img
     @if(alt.length     > 0) { alt   = "@alt"     }
     @if(classes.length > 0) { class = "@classes" }
-    src    = "@UIAssets.versioned(fpath)"
+    src    = "@Assets.versioned(fpath)"
     srcset = "@srcset(fname, ext, maxSize)"
   >
 }}}}

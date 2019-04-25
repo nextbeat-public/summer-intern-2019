@@ -1,5 +1,5 @@
 {
-  "name": "nextbeat-summer-internship",
+  "name": "app",
   "version": "1.0.0-SNAPSHOT.0",
   "scripts": {
     "build":       "webpack --mode development --progress --colors",

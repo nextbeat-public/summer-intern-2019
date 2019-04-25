@@ -5,7 +5,7 @@
 * please view the LICENSE file that was distributed with this source code.
 *@
 
-@import controllers.routes.UIAssets
+@import controllers.routes.Assets
 @(vv: model.component.util.ViewValuePageLayout)(content: play.twirl.api.Html)(
   implicit messages: play.api.i18n.Messages
 )
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
 
     @** 各種設定 **@
-    <link rel="icon" type="image/png" href=@UIAssets.versioned("images/common/favicon.png")>
+    <link rel="icon" type="image/png" href=@Assets.versioned("images/common/favicon.png")>
 
     @** SEO関連**@
     @views.html.common.tags.SeoTagsAtHead(vv)
@@ -23,7 +23,7 @@
 
     @** CSS登録 *@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i">
-    <link rel="stylesheet" type="text/css" href=@UIAssets.versioned("nextbeat-summer-internship/main.css")>
+    <link rel="stylesheet" type="text/css" href=@Assets.versioned("app/main.css")>
 
     @** HTMLの動作や状態を指定 *@
     <meta http-equiv="Pragma"          content="no-cache">

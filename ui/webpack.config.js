@@ -34,7 +34,7 @@ module.exports = (env, argv) => {
       extensions:[ '.ts', '.js', '.png' ]
     },
     output:  {
-      path:     path.resolve(__dirname, 'dist'),
+      path:     path.resolve(__dirname, '../public'),
       filename: fname + '.js'
     },
     optimization: { minimizer: [ new UglifyJsPlugin() ] },
