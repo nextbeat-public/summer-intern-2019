@@ -1,0 +1,84 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@**
+ * 21卒サマーインターン: メンター
+ *@
+@views.html.common.layout.InnerContent("site-recruit-internship-for-summer-21-mentor", "content") {
+
+  @** タイトル *@
+  <div class="content__section title">
+    <h3  class="title__section main">MENTOR</h3>
+    <div class="title__section sub">メンター紹介</div>
+  </div>
+
+  @** メンター紹介 *@
+  <div class="content__section data-list mentor">
+    <ul class="data-list__inner">
+      @** メンター: 石毛さん *@
+      <li class="data-list__item">
+        <div class="mentor__section photo">
+          @views.html.common.component.image.ResponsiveImage(
+            path    = "recruit/internship_for_summer_21/03_mentor-ishige.jpg",
+            alt     = "執行役員 CSO 石毛 陽子",
+            classes = "photo__image"
+          )
+        </div>
+        <div class="mentor__section job-title">執行役員 CSO</div>
+        <h4  class="mentor__section name">石毛 陽子</h4>
+        <div class="mentor__section job-exp">
+          東京大学文学部卒業後、大和証券エスエムビーシー株式会社（現・大和証券株式会社）へ入社。
+          経営企画及び企業向けファイナンス支援業務を担当。
+          2013年、ローランド・ベルガーに戦略コンサルタントとして参画。
+          シンガポール拠点にて日系及び外資企業のアジア事業拡大の支援に携わる。
+          2018年、CSO（最高戦略責任者）としてネクストビートへ入社。
+          ネクストビート在籍中に第二子を出産。
+          会社の福利厚生であるベビーシッター補助制度等を活用し、産後復帰。複数の新規事業の統括も兼務する。
+        </div>
+      </li>
+      @** メンター: 里吉さん *@
+      <li class="data-list__item">
+        <div class="mentor__section photo">
+          @views.html.common.component.image.ResponsiveImage(
+            path    = "recruit/internship_for_summer_21/03_mentor-satoyoshi.jpg",
+            alt     = "執行役員 CMO 里吉 孝太",
+            classes = "photo__image"
+          )
+        </div>
+        <div class="mentor__section job-title">執行役員 CMO</div>
+        <h4  class="mentor__section name">里吉 孝太</h4>
+        <div class="mentor__section job-exp">
+          2007年株式会社セプテーニへ入社。年間営業成績全国1位を2年連続で獲得。
+          2012年からファッションコーディネートアプリをゼロから立ち上げ、その後、KDDIにバイアウト。
+          2017年メディアグロースグループ責任者として株式会社ネクストビートへ入社。
+          子育て情報メディア「KIDSNA」のユーザーを約10倍の400万ユーザーに増強させるなど、
+          その実績が評価され、わずか1年で役員に抜擢。2018年執行役員CMOに就任。
+        </div>
+      </li>
+      @** メンター: 澄川さん *@
+      <li class="data-list__item">
+        <div class="mentor__section photo">
+          @views.html.common.component.image.ResponsiveImage(
+            path    = "recruit/internship_for_summer_21/03_mentor-sumikawa.jpg",
+            alt     = "執行役員 CHRO/CHO 澄川 恵美子",
+            classes = "photo__image"
+          )
+        </div>
+        <div class="mentor__section job-title">執行役員 CHRO/CHO</div>
+        <h4  class="mentor__section name">澄川 恵美子</h4>
+        <div class="mentor__section job-exp">
+          東京大学大学院医学系研究科を卒業。
+          在学中はラオスにて国際協力機構 "JICA"と発展途上国の支援に携わる研究を行う。
+          2011年、株式会社ディー・エヌ・エーへ新卒入社。
+          新規事業開発や新卒採用、アプリマーケティング戦略の責任者を担当。
+          退職後、自身で事業立ち上げを行う傍ら、フリーランスとしてスタートアップ、NPO等の支援に従事。
+          2016年、人事執行役員 CHROとして株式会社ネクストビートへ入社。2017年第一子を出産後、復帰。
+        </div>
+      </li>
+    </ul>
+  </div>
+}

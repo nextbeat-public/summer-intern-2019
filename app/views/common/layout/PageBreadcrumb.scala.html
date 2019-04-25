@@ -1,0 +1,30 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@(vv: model.component.util.ViewValuePageBreadcrumb)
+
+@**
+ * メニュー: 階層表示
+ *@
+@views.html.common.layout.InnerContent("site-shop-common-breadcrumb-menu") {
+  <ol class="breadcrumb">
+    @for((item, index) <- vv.content.zipWithIndex) {
+      @item.navigateTo match {
+        case None      => { <li class="breadcrumb__item no-link">       @tplItemText(item)</li>     }
+        case Some(url) => { <li class="breadcrumb__item"><a href="@url">@tplItemText(item)</a></li> }
+      }
+    }
+  </ol>
+}
+
+@** テキスト表示: 最大幅設定 *@
+@tplItemText(item: model.component.util.ViewValueNavTag) = {
+  @item.ellipsis match {
+    case None        => { <span class="breadcrumb__item-text">@item.title</span> }
+    case Some(width) => { <span class="breadcrumb__item-text" style="max-width: @(width)px;">@item.title</span> }
+  }
+}

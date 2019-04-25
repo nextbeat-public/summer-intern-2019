@@ -1,0 +1,134 @@
+@*
+* This file is part of the Nextbeat services.
+*
+* For the full copyright and license information,
+* please view the LICENSE file that was distributed with this source code.
+*@
+
+@(vv: model.component.util.ViewValuePageLayout)
+
+@**
+ * ページ・フッター定義
+ *@
+<footer id="nav-footer" class="content">
+  <div class="content__breadcrumb">
+    @** パンくず *@
+    <div class="content__section breadcrumb">
+      @for(breadcrumb <- vv.breadcrumb) {
+        @views.html.common.layout.PageBreadcrumb(breadcrumb)
+      }
+    </div>
+
+    @** ページ先頭へ *@
+    <div class="content__section navigate-to-top">
+      @views.html.common.component.button.StrokedButton(
+        classes    = "navigate-to-top__button",
+        title      = "PAGE TOP",
+        fontIcon   = "icon-arrow-up",
+        navigateTo = "#main-content"
+      )
+    </div>
+  </div>
+  <div class="content__inner">
+    @** 採用ロゴ *@
+    <div class="content__section logo">
+      @views.html.common.component.image.ResponsiveImage(
+        path    = "common/logo_light.png",
+        alt     = "Nextbeat",
+        classes = "logo__image",
+        maxSize = 1
+      )
+      <span class="logo__text">RECRUITMENT</span>
+    </div>
+
+    @** メニュー: プライマリー *@
+    <div class="content__section data-list menu-1st">
+      <ol class="data-list__inner">
+        <li class="data-list__item">
+          <a class="menu-1st__link" target="_blank" href="/recruit/interview">インタビュー</a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-1st__link" target="_blank" href="/recruit/work-style">ワークスタイル</a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-1st__link" target="_blank" href="https://recruit.jobcan.jp/nextbeat/list">募集要項</a>
+        </li>
+      </ol>
+    </div>
+
+    @** メニュー: セカンダリー *@
+    <div class="content__section data-list menu-2nd">
+      <ol class="data-list__inner">
+        <li class="data-list__item">
+          <a class="menu-2nd__link" target="_blank" href="/about/overview">企業情報</a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-2nd__link" target="_blank" href="/services">サービス</a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-2nd__link" target="_blank" href="/news">ニュース</a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-2nd__link" target="_blank" href="/contact">お問い合わせ</a>
+        </li>
+      </ol>
+    </div>
+
+    @** メニュー: 外部サービス *@
+    <div class="content__section data-list mene-external">
+      <ul class="data-list__inner">
+        <li class="data-list__item">
+          <a class="menu-external__link" target="_blank" href="https://www.wantedly.com/companies/nextbeat2">
+            @views.html.common.component.image.ResponsiveImage(
+              classes = "mene-external__icon wantedly",
+              path    = "common/icon_wantedly.svg",
+              alt     = "Wantedly",
+              maxSize = 1
+            )
+          </a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-external__link" target="_blank" href="https://www.facebook.com/nextbeat1">
+            @views.html.common.component.image.ResponsiveImage(
+              classes = "mene-external__icon facebook",
+              path    = "common/icon_facebook.svg",
+              alt     = "Facebook",
+              maxSize = 1
+            )
+          </a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-external__link" target="_blank" href="https://twitter.com/nextbeat_corp">
+            @views.html.common.component.image.ResponsiveImage(
+              classes = "mene-external__icon twitter",
+              path    = "common/icon_twitter.svg",
+              alt     = "Twitter",
+              maxSize = 1
+            )
+          </a>
+        </li>
+        <li class="data-list__item">
+          <a class="menu-external__link" target="_blank" href="https://www.youtube.com/channel/UCwNZqItZY_nfUm88EohRLRw">
+            @views.html.common.component.image.ResponsiveImage(
+              classes = "mene-external__icon youtube",
+              path    = "common/icon_youtube.svg",
+              alt     = "Youtube",
+              maxSize = 1
+            )
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    @** 規約 *@
+    <div class="content__section guideline">
+      <a class="guideline__link" target="_blank" href="/privacy_jp">プライバシーポリシー</a>
+    </div>
+
+    @** コピーライト *@
+    <small class="content__section copyright">
+      <span class="copyright__mark">&copy;</span>
+      <span class="copyright__text">@(java.time.LocalDate.now.getYear) nextbeat Co.Ltd.</span>
+    </small>
+  </div>
+</footer>

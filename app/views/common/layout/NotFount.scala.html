@@ -1,0 +1,31 @@
+@*
+* This file is part of the Nextbeat services.
+*
+* For the full copyright and license information,
+* please view the LICENSE file that was distributed with this source code.
+*@
+
+@(vv: model.component.util.ViewValuePageLayout)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv) {
+  <article id="site-404-not-found">
+    @views.html.common.layout.InnerContent("site-404-not-found-message", "content") {
+      <div class="content__section title">
+        <div class="title__code">404</div>
+        <h3  class="title__message">Not Found</h3>
+      </div>
+      <div class="content__section guide">
+        <p class="guide__message">
+          お探しのページが見つかりません。<br>
+          一時的にアクセスできない状態か、移動もしくは削除されてしまった可能性がございます。
+        </p>
+      </div>
+      <div class="content__section action">
+        @views.html.common.component.button.StrokedButton(
+          classes    = "action__navigate-to-top",
+          title      = "トップページへ",
+          navigateTo = "/"
+        )
+      </div>
+    }
+  </article>
+}

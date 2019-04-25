@@ -1,0 +1,23 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@(vv: model.component.util.ViewValuePageLayout)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv) {
+  @views.html.common.layout.ContentLayout(
+    id      = "site-recruit-internship-for-summer-21",
+    content = tplContent,
+  )
+}
+
+@** テンプレート: コンテンツ *@
+@tplContent = {
+  @views.html.site.recruit.internship_for_summer_21._01_MainVisual()
+  @views.html.site.recruit.internship_for_summer_21._02_Experience()
+  @views.html.site.recruit.internship_for_summer_21._03_Mentor()
+  @views.html.site.recruit.internship_for_summer_21._04_Summary()
+  @views.html.site.recruit.internship_for_summer_21._05_Flow()
+}

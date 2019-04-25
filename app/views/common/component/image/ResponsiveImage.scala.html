@@ -1,0 +1,35 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@import controllers.routes.UIAssets
+@import play.twirl.api.TwirlFeatureImports._
+@(path: String, alt: String, classes: String = "", maxSize: Int = 2)
+
+@** 画像のサイズ指定表記 *@
+@srcset(fname: String, ext: String, maxSize: Int) = {
+  @for(size <- 1 to maxSize) {
+    @if(size <= 1) {
+      @UIAssets.versioned(fname + ext) @(size + "x")
+    } else {
+      @UIAssets.versioned(fname + "@" + size + "x" + ext) @(size + "x")
+    }
+    @if(size < maxSize) { , }
+  }
+}
+
+@** IMGタグの表示 *@
+@defining("images/" + path)  { fpath =>
+@defining(fpath.lastIndexOf("."))  { pos   =>
+@defining(fpath.substring(0, pos)) { fname =>
+@defining(fpath.substring(pos))    { ext   =>
+  <img
+    @if(alt.length     > 0) { alt   = "@alt"     }
+    @if(classes.length > 0) { class = "@classes" }
+    src    = "@UIAssets.versioned(fpath)"
+    srcset = "@srcset(fname, ext, maxSize)"
+  >
+}}}}
