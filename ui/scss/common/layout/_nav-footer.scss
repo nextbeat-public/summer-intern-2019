@@ -1,0 +1,169 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+#nav-footer {
+
+  //-- [ レイアウト ] ----------------------------------------------------------
+  &.content {
+    position:   relative;
+    color:      white;
+    background: black;
+    .content__inner {
+      width:    920px;
+      margin:   auto;
+      position: relative;
+      padding:  $space-size-large 0;
+    }
+    .content__breadcrumb {
+      height:     120px;
+      box-sizing: border-box;
+      background: white;
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- ぱんくず
+  //- ページ先頭へ
+  .content__section.navigate-to-top {
+    top:      $space-size-base;
+    right:    $space-size-base;
+    position: absolute;
+    .navigate-to-top__button {
+      height:    80px;
+      width:     60px;
+      min-width: 60px;
+      border:    0;
+    }
+    .button__title {
+      top:              70px;
+      right:            20px;
+      width:            70px;
+      font-size:        $font-size-micro;
+      height:           20px;
+      line-height:      $line-height-rate-base;
+      position:         absolute;
+      color:            map-get($mat-brand-text, 900);
+      transform:        rotate(90deg);
+      transform-origin: right;
+      text-align:       right;
+      letter-spacing:   1px;
+    }
+    .button__icon.icon-arrow-up {
+      &::before {
+        top:        0;
+        right:      28px;
+        width:      1px;
+        height:     80px;
+        margin:     0;
+        display:    inline-block;
+        position:   absolute;
+        content:    "";
+        background: map-get($mat-brand-text, 900);
+      }
+      &::after {
+        top:         0;
+        right:       28px;
+        width:       1px;
+        height:      10px;
+        margin:      0;
+        display:     inline-block;
+        position:    absolute;
+        content:     "";
+        background:  map-get($mat-brand-text, 900);
+        transform:   rotate(-45deg);
+        transform-origin: top;
+      }
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- ロゴ
+  .content__section.logo {
+    .logo__image {
+      height:       50px;
+      margin-right: $space-size-base;
+    }
+    .logo__text {
+      font-size:      $font-size-base;
+      font-family:    $font-family-roboot;
+      font-weight:    bold;
+      line-height:    40px;
+      letter-spacing: 2px;
+      vertical-align: bottom;
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- メニュー: プライマリー
+  .content__section.menu-1st,
+  .content__section.menu-2nd {
+    //- レイアウト
+    .data-list__inner {
+      margin:     0;
+      padding:    0;
+      list-style: none;
+    }
+    .data-list__item {
+      padding:     $space-size-base 0;
+      display:     inline-block;
+      font-weight: bold;
+      &:not(:last-child) {
+        margin-right: $space-size-large;
+      }
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- ガイドライン
+  .content__section.guideline {
+    .guideline__link {
+      color:     map-get($mat-grey, 400);
+      font-size: $font-size-small;
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- メニュー: 外部サービス
+  .content__section.mene-external {
+    right:    0;
+    bottom:   $space-size-large + $space-size-medium;
+    position: absolute;
+
+    //- レイアウト
+    .data-list__inner {
+      margin:     0;
+      padding:    0;
+      list-style: none;
+    }
+    .data-list__item {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: $space-size-small;
+      }
+    }
+    //- サービスロゴ
+    .mene-external__icon {
+      height:         16px;
+      line-height:    16px;
+      vertical-align: middle;
+      &.wantedly {
+        height:      40px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- コピーライト
+  .content__section.copyright {
+    right:      0;
+    bottom:     $space-size-large;
+    position:   absolute;
+    display:    block;
+    text-align: center;
+  }
+}

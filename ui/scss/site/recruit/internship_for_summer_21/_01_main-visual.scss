@@ -1,0 +1,78 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+#site-recruit-internship-for-summer-21-main-visual {
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- 背景設定
+  &.content {
+    height:              660px;
+    position:            relative;
+    overflow:            hidden;
+    box-sizing:          border-box;
+    background-color:    black;
+    background-size:     cover;
+    background-position: top center;
+    background-repeat:   no-repeat;
+    background-image:    url("../assets/images/site/recruit/internship_for_summer_21/01_main-visual.jpg");
+  }
+  .content__inner {
+    @include abs-position;
+    width:   $content-width;
+    margin:  auto;
+    color:   white;
+    z-index: 500;
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- キャッチフレーズ
+  .content__section.catchphrase {
+    padding-top:    180px;
+    padding-bottom: 120px;
+    text-align:     center;
+    .visual__image {
+      height: 60px;
+    }
+  }
+
+  //- タイトル
+  .content__section.title {
+    text-align: center;
+    .title__section.main {
+      color:         white;
+      font-size:     $font-size-2xlarge;
+      font-family:   $font-family-roboot;
+      font-style:    italic;
+      font-weight:   bold;
+      margin-bottom: $space-size-micro;
+    }
+    .title__section.sub {
+      font-size:     30px;
+      font-weight:   bold;
+      margin-bottom: $space-size-xlarge;
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- エントリーボタン
+  .content__secion.action {
+    text-align: center;
+    .button.action__to-entry {
+      width:      360px;
+      height:     80px;
+      border:     0;
+      background: $accent-color;
+      .button__title {
+        font-size:      $font-size-2xlarge;
+        font-weight:    bold;
+        font-style:     italic;
+        font-family:    $font-family-roboot;
+        letter-spacing: 3px;
+      }
+    }
+  }
+}

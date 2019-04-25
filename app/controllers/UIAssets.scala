@@ -1,7 +1,6 @@
 /*
- * Copyright ixias.net All Rights Reserved.
+ * This file is part of the Nextbeat services.
  *
- * Use of this source code is governed by an MIT-style license
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */

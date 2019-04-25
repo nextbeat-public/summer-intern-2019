@@ -1,0 +1,51 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat service.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+//- テキスト: 通常
+$dark-primary-text:    rgba(black, 0.87);
+$dark-secondary-text:  rgba(black, 0.54);
+$dark-disabled-text:   rgba(black, 0.38);
+$dark-dividers:        rgba(black, 0.12);
+$dark-focused:         rgba(black, 0.12);
+
+//- テキスト: 別名設定
+$text-color:           $dark-primary-text;
+$text-secondary:       $dark-secondary-text;
+$text-disabled:        $dark-disabled-text;
+
+//- テキスト: 反転
+$light-primary-text:   white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text:  rgba(white, 0.5);
+$light-dividers:       rgba(white, 0.12);
+$light-focused:        rgba(white, 0.12);
+
+//- 色設定: 標準カラーパレット
+@import "_color01_red";
+@import "_color02_pink";
+@import "_color03_purple";
+@import "_color04_deep-purple";
+@import "_color05_indigo";
+@import "_color06_blue";
+@import "_color07_light-blue";
+@import "_color08_cyan";
+@import "_color09_teal";
+@import "_color10_green";
+@import "_color11_light-green";
+@import "_color12_lime";
+@import "_color13_yellow";
+@import "_color14_amber";
+@import "_color15_orange";
+@import "_color16_deep-orange";
+@import "_color17_brown";
+@import "_color18_grey";
+@import "_color19_blue-grey";
+
+//- 色設定: カスタムカラー
+@import "_color_brand";
+@import "_color_brand-2";
+@import "_color_brand-text";

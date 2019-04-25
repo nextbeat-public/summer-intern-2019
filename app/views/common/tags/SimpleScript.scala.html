@@ -5,7 +5,10 @@
 * please view the LICENSE file that was distributed with this source code.
 *@
 
+@import controllers.routes.UIAssets
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src=@UIAssets.versioned("nextbeat-summer-internship/main.js")></script>
 <script>
   function scrollToAnker(hash) {
     var target = $(hash);

@@ -1,0 +1,36 @@
+{
+  "name": "nextbeat-summer-internship",
+  "version": "1.0.0-SNAPSHOT.0",
+  "scripts": {
+    "build":       "webpack --mode development --progress --colors",
+    "build.prod":  "webpack --mode production -p --progress --colors",
+    "build.watch": "webpack --mode development --watch --progress --colors"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.2.1",
+    "@types/jquery.validation": "1.16.4",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1",
+    "jquery.loadtemplate": "^1.5.10",
+    "jquery-validation": "^1.17.0",
+    "moment": "^2.22.2",
+    "file-loader": "^1.1.11",
+    "node-sass": "^4.5.2",
+    "optimize-css-assets-webpack-plugin": "4.0.3",
+    "postcss-loader": "2.1.5",
+    "sass-loader": "^7.0.3",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.21.0",
+    "slick-carousel": "^1.7.1",
+    "ts-loader": "^4.4.2",
+    "tsconfig-paths-webpack-plugin": "3.2.0",
+    "uglifyjs-webpack-plugin": "1.2.7",
+    "fs": "0.0.2",
+    "typescript": "2.4.2",
+    "ts-node": "^5.0.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  }
+}

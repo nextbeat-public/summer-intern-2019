@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
 
     @** 各種設定 **@
-    <link rel="icon" type="image/png" href=@UIAssets.versioned("images-v3/common/favicon.png")>
+    <link rel="icon" type="image/png" href=@UIAssets.versioned("images/common/favicon.png")>
 
     @** SEO関連**@
     @views.html.common.tags.SeoTagsAtHead(vv)
@@ -23,11 +23,7 @@
 
     @** CSS登録 *@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i">
-    @**
-     * @for(name <- vv.remoteAssets) {
-     *   <link rel="stylesheet" type="text/css" href="@controllers.RemoteAssets.getUrl(name, "main.css")">
-     * }
-    *@
+    <link rel="stylesheet" type="text/css" href=@UIAssets.versioned("nextbeat-summer-internship/main.css")>
 
     @** HTMLの動作や状態を指定 *@
     <meta http-equiv="Pragma"          content="no-cache">

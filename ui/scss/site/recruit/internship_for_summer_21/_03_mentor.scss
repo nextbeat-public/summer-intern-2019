@@ -1,0 +1,83 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+#site-recruit-internship-for-summer-21-mentor {
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- タイトル
+  .content__section.title {
+    padding:    $space-size-xlarge 0;
+    text-align: center;
+    .title__section.main {
+      margin:      0;
+      color:       $accent-color;
+      font-size:   $font-size-h3;
+      line-height: $font-size-h3;
+      font-family: $font-family-roboot;
+      font-weight: bold;
+      font-style:  italic;
+    }
+    .title__section.sub {
+      font-size:   $font-size-h3-ruby;
+      font-weight: bold;
+    }
+  }
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- メンター紹介
+  .content__section.mentor {
+    text-align:    center;
+    margin-bottom: $space-size-large;
+    //- レイアウト
+    .data-list__inner {
+      margin:     auto;
+      padding:    0;
+      width:      $content-width;
+      display:    table;
+      list-style: none;
+    }
+    //- アイテム
+    .data-list__item {
+      display: table-cell;
+      padding: $space-size-medium / 2;
+      &:first-child { padding-left:  0; }
+      &:last-child  { padding-right: 0; }
+    }
+    //- プロフィール: 写真
+    .mentor__section.photo {
+      width:         270px;
+      height:        222px;
+      margin:        auto;
+      margin-bottom: $space-size-base;
+      .photo__image {
+        width:         100%;
+        height:        100%;
+        object-fit:    cover;
+        border-radius: $border-radius-base;
+      }
+    }
+    //- プロフィール: 役職
+    .mentor__section.job-title {
+      font-size:   $font-size-small;
+      font-weight: bold;
+    }
+    //- プロフィール: 氏名
+    .mentor__section.name {
+      margin:        0;
+      margin-bottom: $space-size-base;
+      font-size:     $font-size-medium;
+      font-weight:   bold;
+    }
+    //- プロフィール: 経歴
+    .mentor__section.job-exp {
+      width:       340px;
+      font-size:   ($font-size-base + $font-size-medium) / 2;
+      line-height: 1.93;
+      text-align:  left;
+    }
+  }
+}

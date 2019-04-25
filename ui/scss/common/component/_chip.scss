@@ -1,0 +1,29 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+.chip.chip-basic {
+  width:         92px;
+  height:        25px;
+  line-height:   25px;
+  padding:       0 10px;
+  display:       inline-block;
+  background:    map-get($mat-brand, 400);
+  border-radius: $border-radius-base;
+  box-sizing:    border-box;
+  text-align:    center;
+  .chip__title {
+    color:          white;
+    font-size:      $font-size-micro;
+    font-style:     normal;
+    font-weight:    bold;
+    vertical-align: middle;
+  }
+}
+
+.chip.chip-basic.accent {
+  background: map-get($mat-brand-2, 500);
+}

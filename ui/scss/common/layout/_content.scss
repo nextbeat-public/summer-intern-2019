@@ -1,0 +1,54 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+//- コンテンツ定義
+//-~~~~~~~~~~~~~~~~
+html {
+  min-width:  $content-width;
+  overflow-y: auto;
+  overflow-x: auto;
+  position:   relative;
+}
+body {
+  position:   relative;
+  background: white;
+}
+
+#nav-global {
+  min-width:  $content-width;
+  height:     $globalnav-height;
+  margin:     auto;
+  background: white;
+  box-shadow: 0 1px 0 0 map-get($mat-brand-text, 100);
+}
+
+//- レイアウト定義
+#main-content__layout {
+  &.layout {
+    width:          $content-width;
+    margin:         0 auto;
+    letter-spacing: 0;
+    white-space:    nowrap;
+  }
+  &.layout > .layout__section {
+    display:     block;
+    position:    relative;
+    box-sizing:  border-box;
+    white-space: normal;
+  }
+  &.layout > .layout__section.nav-side {
+    width:          $sidenav-width;
+    padding-right:  $space-size-medium;
+    display:        inline-block;
+    vertical-align: top;
+  }
+  &.layout > .layout__section.content {
+    width:   $content-width - $sidenav-width;
+    display: inline-block;
+    vertical-align: top;
+  }
+}

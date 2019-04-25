@@ -1,0 +1,40 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat service.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+$mat-lime: (
+  50:   #f9fbe7,
+  100:  #f0f4c3,
+  200:  #e6ee9c,
+  300:  #dce775,
+  400:  #d4e157,
+  500:  #cddc39,
+  600:  #c0ca33,
+  700:  #afb42b,
+  800:  #9e9d24,
+  900:  #827717,
+  A100: #f4ff81,
+  A200: #eeff41,
+  A400: #c6ff00,
+  A700: #aeea00,
+  contrast: (
+    50:   $dark-primary-text,
+    100:  $dark-primary-text,
+    200:  $dark-primary-text,
+    300:  $dark-primary-text,
+    400:  $dark-primary-text,
+    500:  $dark-primary-text,
+    600:  $dark-primary-text,
+    700:  $dark-primary-text,
+    800:  $dark-primary-text,
+    900:  $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+

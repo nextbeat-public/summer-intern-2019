@@ -1,0 +1,23 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+.button.button-stroked {
+  height:       60px;
+  min-width:   360px;
+  color:       map-get($mat-brand, 500);
+  border:      1px solid map-get($mat-brand, 400);
+  font-size:   $font-size-medium;
+  font-weight: bold;
+  &.weak {
+    color:        map-get($mat-brand-text, 600);
+    border-color: map-get($mat-brand-text, 600);
+  }
+  &.accent {
+    color:        map-get($mat-brand-2, 700);
+    border-color: map-get($mat-brand-2, 700);
+  }
+}

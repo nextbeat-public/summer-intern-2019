@@ -1,0 +1,32 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+//- 横幅
+.full-width {
+  width:     100% !important;
+  max-width: 100% !important;
+}
+
+//- テーブル定義
+.fixed-datatable {
+  width:        100%;
+  display:      table;
+  table-layout: fixed;
+}
+.fixed-datatable__row {
+  display: table-row;
+}
+.fixed-datatable__cell {
+  display:        table-cell;
+  padding:        $space-size-base / 2 0;
+  text-align:     center;
+  vertical-align: middle;
+  > *           { text-align: initial; }
+  &:first-child { text-align: left;    }
+  &:last-child  { text-align: right;   }
+}
+

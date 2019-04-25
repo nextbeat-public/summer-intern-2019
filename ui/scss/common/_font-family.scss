@@ -1,0 +1,19 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+// ----[ Typography ]-----------------------------------------------------------
+$font-family:
+  YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体",   //- 游ゴシック指定
+  -apple-system, BlinkMacSystemFont,                     //- iOS: san francisco
+  Roboto,                                                //- Android4 以降
+  Droid Sans,                                            //- Android
+  Meiryo,   "メイリオ",                                  //- Vista 以降
+  Verdana,                                               //- Win用欧文
+  "ＭＳ Ｐゴシック",                                     //- Win95 以降
+  sans-serif;
+
+$font-family-roboot: 'Roboto', sans-serif;

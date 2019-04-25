@@ -1,0 +1,52 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+#site-shop-common-breadcrumb-menu {
+  background: map-get($mat-brand-text, 100);
+
+  //-- [ 要素定義 ] ------------------------------------------------------------
+  //- 階層表現
+  .breadcrumb {
+    margin:      0 auto;
+    padding:     0;
+    width:       $content-width;
+    height:      25px;
+    list-style:  none;
+  }
+  // 階層: アイテム
+  .breadcrumb__item {
+    height:      15px;
+    line-height: 15px;
+    display:     inline-block;
+    &:not(:last-child) {
+      &::after {
+        content:        "";
+        width:          4px;
+        height:         4px;
+        margin:         5px 10px;
+        display:        inline-block;
+        transform:      rotate(45deg);
+        border-top:     1px solid map-get($mat-brand-text, 900);
+        border-right:   1px solid map-get($mat-brand-text, 900);
+        vertical-align: top;
+      }
+    }
+    &.no-link {
+      color: map-get($mat-brand-text, 700);
+    }
+  }
+  // 階層: テキスト
+  .breadcrumb__item-text {
+    max-width:      630px;
+    display:        inline-block;
+    font-size:      $font-size-nano;
+    white-space:    nowrap;
+    vertical-align: top;
+    text-overflow:  ellipsis;
+    overflow:       hidden;
+  }
+}

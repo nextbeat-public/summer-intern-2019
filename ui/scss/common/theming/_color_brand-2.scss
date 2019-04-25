@@ -1,0 +1,40 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat service.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+$mat-brand-2: (
+  50:   #FFFCFE,  //-
+  100:  #FAF2F8,  //- 背景
+  200:  #F8DFF3,  //-
+  300:  #EEACE0,  //-
+  400:  #E890D6,  //-
+  500:  #E274CB,  //- メインカラー, CVボタンリンクカラー
+  600:  #DC58C0,  //-
+  700:  #D654BC,  //- CVテキストリンクカラー
+  800:  #C732A7,  //-
+  900:  #AB2E90,  //-
+  A100: #000000,  //- 未使用
+  A200: #000000,  //- 未使用
+  A400: #000000,  //- 未使用
+  A700: #000000,  //- 未使用
+  contrast: (
+    50:   $dark-primary-text,
+    100:  $dark-primary-text,
+    200:  $dark-primary-text,
+    300:  $dark-primary-text,
+    400:  $light-primary-text,
+    500:  $light-primary-text,
+    600:  $light-primary-text,
+    700:  $light-primary-text,
+    800:  $light-primary-text,
+    900:  $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+

@@ -1,0 +1,15 @@
+//------------------------------------------------------------------------------
+// This file is part of the Nextbeat services.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+.button {
+  padding:       0 $space-size-base;
+  color:         map-get($mat-brand, 500);
+  border:        1px solid map-get($mat-brand, 400);
+  border-radius: $border-radius-base;
+  background:    white;
+  box-sizing:    border-box;
+}

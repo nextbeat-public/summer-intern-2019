@@ -1,0 +1,41 @@
+//------------------------------------------------------------------------------
+// This file is part of the OMOTENASHI service.
+//
+// For the full copyright and license information,
+// please view the LICENSE file that was distributed with this source code.
+//------------------------------------------------------------------------------
+
+$mat-deep-orange: (
+  50:   #fbe9e7,
+  100:  #ffccbc,
+  200:  #ffab91,
+  300:  #ff8a65,
+  400:  #ff7043,
+  500:  #ff5722,
+  600:  #f4511e,
+  700:  #e64a19,
+  800:  #d84315,
+  900:  #bf360c,
+  A100: #ff9e80,
+  A200: #ff6e40,
+  A400: #ff3d00,
+  A700: #dd2c00,
+  contrast: (
+    50:   $dark-primary-text,
+    100:  $dark-primary-text,
+    200:  $dark-primary-text,
+    300:  $dark-primary-text,
+    400:  $dark-primary-text,
+    500:  $light-primary-text,
+    600:  $light-primary-text,
+    700:  $light-primary-text,
+    800:  $light-primary-text,
+    900:  $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+
