@@ -7,8 +7,8 @@
 
 package persistence.geo.model
 
-import util.EnumStatus
 import java.time.LocalDateTime
+import mvc.util.EnumStatus
 
 // 地域情報
 //~~~~~~~~~~
