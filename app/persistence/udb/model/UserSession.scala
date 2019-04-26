@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 // ユーザ情報
 //~~~~~~~~~~~~~
 case class UserSession(
-  id:        Option[User.Id],                     // ユーザID
+  id:        User.Id,                             // ユーザID
   token:     String,                              // トークン
   exprity:   LocalDateTime,                       // 有効期限
   updatedAt: LocalDateTime = LocalDateTime.now,   // データ更新日
