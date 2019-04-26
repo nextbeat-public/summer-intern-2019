@@ -1,0 +1,18 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@(vv: model.component.util.ViewValuePageLayout)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv) {
+  @views.html.common.layout.ContentLayout(
+    id      = "site-app-new-user",
+    content = tplContent,
+  )
+}
+
+@** テンプレート: コンテンツ *@
+@tplContent = {
+}
