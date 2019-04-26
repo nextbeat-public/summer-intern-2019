@@ -31,8 +31,9 @@ libraryDependencies ++= Seq(
 
 // setting for project
 lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
+  .enablePlugins(FlywayPlugin)
   .enablePlugins(SbtWeb)
+  .enablePlugins(PlayScala)
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
@@ -67,6 +68,13 @@ javaOptions ++= Seq(
   "-Dlogger.file=conf/logback.xml"
 )
 fork in run := true
+
+// Database Setup
+flywayDriver    := "org.h2.Driver"
+flywayUrl       := "jdbc:h2:tcp://localhost/./database/nextbeat"
+flywayUser      := "nextbeat"
+flywayPassword  := "pass"
+flywayLocations += "database/migration"
 
 // Setting for prompt
 import com.scalapenos.sbt.prompt._
