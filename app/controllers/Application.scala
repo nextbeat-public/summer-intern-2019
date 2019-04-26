@@ -13,6 +13,8 @@ import play.api.mvc.InjectedController
 //~~~~~~~~~~
 class ApplicationController extends InjectedController {
 
-  def ping = Action { Ok("ok") }
-  def redirect(to: String, from: String = "") = Action { MovedPermanently(to) }
+  /** リダイレクト処理 */
+  def redirect(to: String, from: String = "") = Action {
+    Redirect(to)
+  }
 }

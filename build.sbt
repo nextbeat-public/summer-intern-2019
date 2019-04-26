@@ -19,10 +19,13 @@ resolvers ++= Seq(
 
 // required libraries
 libraryDependencies ++= Seq(
-  "net.logstash.logback" % "logstash-logback-encoder" % "5.1",
-  "org.asynchttpclient"  % "async-http-client"        % "2.5.3",
-  "org.uaparser"        %% "uap-scala"                % "0.1.0",
-  "com.mohiva"          %% "play-html-compressor"     % "0.7.1",
+  "com.typesafe.play"    %% "play-slick"               % "4.0.0",
+  "com.typesafe.play"    %% "play-slick-evolutions"    % "4.0.0",
+  "org.uaparser"         %% "uap-scala"                % "0.1.0",
+  "com.mohiva"           %% "play-html-compressor"     % "0.7.1",
+  "net.logstash.logback"  % "logstash-logback-encoder" % "5.1",
+  "org.asynchttpclient"   % "async-http-client"        % "2.5.3",
+  "com.h2database"        % "h2"                       % "1.4.199",
   guice
 )
 
