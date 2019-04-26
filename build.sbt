@@ -71,10 +71,10 @@ fork in run := true
 
 // Database Setup
 flywayDriver    := "org.h2.Driver"
-flywayUrl       := "jdbc:h2:tcp://localhost/./database/nextbeat"
+flywayUrl       := "jdbc:h2:tcp://localhost/./database/nextbeat;MODE=MySQL"
 flywayUser      := "nextbeat"
 flywayPassword  := "pass"
-flywayLocations += "database/migration"
+flywayLocations += "db/migration"
 
 // Setting for prompt
 import com.scalapenos.sbt.prompt._
