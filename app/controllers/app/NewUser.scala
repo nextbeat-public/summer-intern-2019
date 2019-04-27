@@ -9,6 +9,7 @@ package controllers.app
 
 import play.api.i18n.I18nSupport
 import play.api.mvc.{ AbstractController, MessagesControllerComponents }
+import model.site.app.SiteViewValueNewUser
 import model.component.util.ViewValuePageLayout
 
 // 登録: 新規ユーザー
@@ -21,7 +22,9 @@ class NewUserController @javax.inject.Inject()(
    * ページの表示
    */
   def viewForApp = Action { implicit request =>
-    val vv = ViewValuePageLayout(id = request.uri)
+    val vv = SiteViewValueNewUser(
+      layout = ViewValuePageLayout(id = request.uri)
+    )
     Ok(views.html.site.app.new_user.Main(vv))
   }
 }

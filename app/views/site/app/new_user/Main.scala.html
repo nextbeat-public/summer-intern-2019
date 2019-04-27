@@ -5,8 +5,11 @@
  * please view the LICENSE file that was distributed with this source code.
  *@
 
-@(vv: model.component.util.ViewValuePageLayout)(implicit messages: play.api.i18n.Messages)
-@views.html.common.layout.Default(vv) {
+@import views.html.helper
+
+@** ユーザー登録フォーム *@
+@(vv: model.site.app.SiteViewValueNewUser)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv.layout) {
   @views.html.common.layout.ContentLayout(
     id      = "site-app-new-user",
     content = tplContent,
@@ -22,32 +25,40 @@
     </h3>
 
     @** --[ フォーム ]-------------------------------------------------------- *@
-    <form class="content__section form" method="POST" action="">
+    @helper.form(
+      action =  controllers.app.routes.NewUserController.viewForApp(),
+      'class -> "form__section form"
+    ) {
 
       @** 名前 *@
       <div class="form__section name-container">
         <span class="form__section name">
+          @helper.inputText(vv.form("nameLast"),  '_showConstraints -> false)
         </span>
         <span class="form__section name">
+          @helper.inputText(vv.form("firstLast"), '_showConstraints -> false)
         </span>
       </div>
 
       @** メールアドレス *@
       <div class="form__section email">
+        @helper.inputText(vv.form("email"), '_showConstraints -> false)
       </div>
 
       @** 住所: 都道府県 *@
       <div class="form__section pref">
+        @helper.select(vv.form("pref"), options = List.empty, '_showConstraints -> false)
       </div>
 
       @** 住所: 詳細 *@
       <div class="form__section address">
+        @helper.inputText(vv.form("address"), '_showConstraints -> false)
       </div>
 
       @** 登録ボタン *@
       <button class="form__section submit" type="submit">
         <span class="submit__text">新規アカウント登録</span>
       </button>
-    </form>
+    }
   }
 }
