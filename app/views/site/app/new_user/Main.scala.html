@@ -33,26 +33,43 @@
       @** 名前 *@
       <div class="form__section name-container">
         <span class="form__section name">
-          @helper.inputText(vv.form("nameLast"),  '_showConstraints -> false)
+          @helper.inputText(vv.form("nameLast"),
+            '_label           -> "名前(姓)",
+            '_showConstraints -> false
+          )
         </span>
         <span class="form__section name">
-          @helper.inputText(vv.form("firstLast"), '_showConstraints -> false)
+          @helper.inputText(vv.form("nameFirst"),
+            '_label           -> "名前(名)",
+            '_showConstraints -> false
+          )
         </span>
       </div>
 
       @** メールアドレス *@
       <div class="form__section email">
-        @helper.inputText(vv.form("email"), '_showConstraints -> false)
+        @helper.inputText(vv.form("email"),
+          '_label           -> "メールアドレス",
+          '_showConstraints -> false
+        )
       </div>
 
       @** 住所: 都道府県 *@
       <div class="form__section pref">
-        @helper.select(vv.form("pref"), options = List.empty, '_showConstraints -> false)
+        @helper.select(
+          field   = vv.form("pref"),
+          options = List.empty,
+          '_label           -> "都道府県",
+          '_showConstraints -> false
+        )
       </div>
 
       @** 住所: 詳細 *@
       <div class="form__section address">
-        @helper.inputText(vv.form("address"), '_showConstraints -> false)
+        @helper.inputText(vv.form("address"),
+          '_label           -> "住所",
+          '_showConstraints -> false
+        )
       </div>
 
       @** 登録ボタン *@
