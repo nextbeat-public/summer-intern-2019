@@ -15,4 +15,39 @@
 
 @** テンプレート: コンテンツ *@
 @tplContent = {
+  @views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
+    @** --[ 見出し ]---------------------------------------------------------- *@
+    <h3 class="content__section header">
+      <span class="header__title">新規ユーザー登録</span>
+    </h3>
+
+    @** --[ フォーム ]-------------------------------------------------------- *@
+    <form class="content__section form" method="POST" action="">
+
+      @** 名前 *@
+      <div class="form__section name-container">
+        <span class="form__section name">
+        </span>
+        <span class="form__section name">
+        </span>
+      </div>
+
+      @** メールアドレス *@
+      <div class="form__section email">
+      </div>
+
+      @** 住所: 都道府県 *@
+      <div class="form__section pref">
+      </div>
+
+      @** 住所: 詳細 *@
+      <div class="form__section address">
+      </div>
+
+      @** 登録ボタン *@
+      <button class="form__section submit" type="submit">
+        <span class="submit__text">新規アカウント登録</span>
+      </button>
+    </form>
+  }
 }

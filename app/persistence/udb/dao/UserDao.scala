@@ -45,14 +45,14 @@ class UserDAO @javax.inject.Inject()(
   class UsersTable(tag: Tag) extends Table[User](tag, "user") {
 
     // Table's columns
-    /* @1 */ def id        = column[User.Id]             ("id", O.PrimaryKey)  // ユーザID
-    /* @2 */ def nameFirst = column[String]              ("name_first")        // 名前 (姓)
-    /* @3 */ def nameLast  = column[String]              ("name_last")         // 名前 (名)
-    /* @4 */ def email     = column[Option[String]]      ("email")             // メールアドレス
-    /* @5 */ def pref      = column[Option[Location.Id]] ("pref")              // 都道府県
-    /* @6 */ def address   = column[Option[String]]      ("address")           // 住所
-    /* @7 */ def updatedAt = column[LocalDateTime]       ("updated_at")        // データ更新日
-    /* @8 */ def createdAt = column[LocalDateTime]       ("created_at")        // データ作成日
+    /* @1 */ def id        = column[User.Id]       ("id", O.PrimaryKey)  // ユーザID
+    /* @2 */ def nameFirst = column[String]        ("name_first")        // 名前 (姓)
+    /* @3 */ def nameLast  = column[String]        ("name_last")         // 名前 (名)
+    /* @4 */ def email     = column[String]        ("email")             // メールアドレス
+    /* @5 */ def pref      = column[Location.Id]   ("pref")              // 都道府県
+    /* @6 */ def address   = column[String]        ("address")           // 住所
+    /* @7 */ def updatedAt = column[LocalDateTime] ("updated_at")        // データ更新日
+    /* @8 */ def createdAt = column[LocalDateTime] ("created_at")        // データ作成日
 
     // The * projection of the table
     def * = (
