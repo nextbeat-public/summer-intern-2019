@@ -33,13 +33,15 @@
       @** 名前 *@
       <div class="form__section name-container">
         <span class="form__section name">
-          @helper.inputText(vv.form("nameLast"),
+          @helper.inputText(
+            vv.form("nameLast"),
             '_label           -> "名前(姓)",
             '_showConstraints -> false
           )
         </span>
         <span class="form__section name">
-          @helper.inputText(vv.form("nameFirst"),
+          @helper.inputText(
+            vv.form("nameFirst"),
             '_label           -> "名前(名)",
             '_showConstraints -> false
           )
@@ -48,7 +50,8 @@
 
       @** メールアドレス *@
       <div class="form__section email">
-        @helper.inputText(vv.form("email"),
+        @helper.inputText(
+          vv.form("email"),
           '_label           -> "メールアドレス",
           '_showConstraints -> false
         )
@@ -66,7 +69,8 @@
 
       @** 住所: 詳細 *@
       <div class="form__section address">
-        @helper.inputText(vv.form("address"),
+        @helper.inputText(
+          vv.form("address"),
           '_label           -> "住所",
           '_showConstraints -> false
         )
