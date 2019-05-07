@@ -1,0 +1,77 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@import views.html.helper
+@import persistence.udb.model.User.formForNewUser
+@(vv: model.site.app.SiteViewValueNewUser)(implicit messages: play.api.i18n.Messages)
+
+@** ユーザー登録フォーム *@
+@views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
+  @** --[ 見出し ]---------------------------------------------------------- *@
+  <h3 class="content__section header">
+    <span class="header__title">新規ユーザー登録</span>
+  </h3>
+
+  @** --[ フォーム ]-------------------------------------------------------- *@
+  <div class="content__section form">
+    @helper.form(action = controllers.app.routes.NewUserController.viewForApp()) {
+
+      @** 住所: 都道府県 *@
+      <div class="form__section pref">
+        @helper.select(
+          field   = formForNewUser("pref"),
+          options = vv.location.map(v => (v.id, v.namePref)),
+          '_label           -> "都道府県",
+          '_showConstraints -> false
+        )
+      </div>
+
+      @** 名前 *@
+      <div class="form__section name-container">
+        <span class="form__section name">
+          @helper.inputText(
+            formForNewUser("nameLast"),
+            '_label           -> "名前(姓)",
+            '_showConstraints -> false
+          )
+        </span>
+        <span class="form__section name">
+          @helper.inputText(
+            formForNewUser("nameFirst"),
+            '_label           -> "名前(名)",
+            '_showConstraints -> false
+          )
+        </span>
+      </div>
+
+      @** メールアドレス *@
+      <div class="form__section email">
+        @helper.inputText(
+          formForNewUser("email"),
+          '_label           -> "メールアドレス",
+          '_showConstraints -> false
+        )
+      </div>
+
+      @** 住所: 詳細 *@
+      <div class="form__section address">
+        @helper.inputText(
+          formForNewUser("address"),
+          '_label           -> "住所",
+          '_showConstraints -> false
+        )
+      </div>
+
+      @** 登録ボタン *@
+      <div class="form__section submit">
+        <button class="button button-stroked" type="submit">
+          <span class="submit__text">新規アカウント登録</span>
+        </button>
+      </div>
+    }
+  </div>
+}

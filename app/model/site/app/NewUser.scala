@@ -7,15 +7,12 @@
 
 package model.site.app
 
-import play.api.data.Form
 import model.component.util.ViewValuePageLayout
-import persistence.udb.model.User
+import persistence.geo.model.Location
 
 // 登録: 新規ユーザー
 //~~~~~~~~~~~~~~~~~~~~~
 case class SiteViewValueNewUser(
-  layout: ViewValuePageLayout
-) {
-  /** フォーム定義 */
-  lazy val form: Form[User] = User.form
-}
+  layout:   ViewValuePageLayout,
+  location: Seq[Location]
+)

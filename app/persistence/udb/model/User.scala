@@ -33,7 +33,7 @@ object User {
   type Id = Long
 
   // --[ フォーム定義 ]---------------------------------------------------------
-  val form = Form(
+  val formForNewUser = Form(
     mapping(
       "nameFirst" -> nonEmptyText,
       "nameLast"  -> nonEmptyText,

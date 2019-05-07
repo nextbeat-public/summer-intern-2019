@@ -38,6 +38,17 @@ class LocationDAO @javax.inject.Inject()(
         .result.headOption
     }
 
+  /**
+   * 地域情報の複数取得
+   * 検索業件: ロケーションID (全国地方公共団体コード)
+   */
+  def filterByIds(ids: Seq[Location.Id]): Future[Seq[Location]] =
+    db.run {
+      slick
+        .filter(_.id inSet ids)
+        .result
+    }
+
   // --[ テーブル定義 ] --------------------------------------------------------
   class LocationTable(tag: Tag) extends Table[Location](tag, "geo_location") {
 
