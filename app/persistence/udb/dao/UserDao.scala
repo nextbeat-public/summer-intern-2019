@@ -25,7 +25,7 @@ class UserDAO @javax.inject.Inject()(
   import profile.api._
 
   // --[ リソース定義 ] --------------------------------------------------------
-  lazy val slick = TableQuery[UsersTable]
+  lazy val slick = TableQuery[UserTable]
 
   // --[ データ処理定義 ] ------------------------------------------------------
   /**
@@ -42,7 +42,7 @@ class UserDAO @javax.inject.Inject()(
     }
 
   // --[ テーブル定義 ] --------------------------------------------------------
-  class UsersTable(tag: Tag) extends Table[User](tag, "user") {
+  class UserTable(tag: Tag) extends Table[User](tag, "udb_user") {
 
     // Table's columns
     /* @1 */ def id        = column[User.Id]       ("id", O.PrimaryKey)  // ユーザID

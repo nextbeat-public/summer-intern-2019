@@ -43,7 +43,7 @@ class UserSessionDAO @javax.inject.Inject()(
     }
 
   // --[ テーブル定義 ] --------------------------------------------------------
-  class UserSessionsTable(tag: Tag) extends Table[UserSession](tag, "user_session") {
+  class UserSessionsTable(tag: Tag) extends Table[UserSession](tag, "udb_user_session") {
 
     // Table's columns
     /* @1 */ def id        = column[User.Id]       ("id", O.PrimaryKey)  // ユーザID
@@ -52,10 +52,11 @@ class UserSessionDAO @javax.inject.Inject()(
     /* @4 */ def updatedAt = column[LocalDateTime] ("updated_at")        // データ更新日
     /* @5 */ def createdAt = column[LocalDateTime] ("created_at")        // データ作成日
 
+    // Indexes
+    def ukey01 = index("ukey01", token, unique = true)
+
     // The * projection of the table
-    def * = (
-      id, token, exprity, updatedAt, createdAt
-    ) <> (
+    def * = (id, token, exprity, updatedAt, createdAt) <> (
       /** The bidirectional mappings : Tuple(table) => Model */
       (UserSession.apply _).tupled,
       /** The bidirectional mappings : Model => Tuple(table) */
