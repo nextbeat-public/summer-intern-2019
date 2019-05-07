@@ -71,7 +71,7 @@ fork in run := true
 
 // Database Setup
 flywayDriver    := "org.h2.Driver"
-flywayUrl       := "jdbc:h2:tcp://localhost/./database/nextbeat;MODE=MySQL"
+flywayUrl       := "jdbc:h2:tcp://localhost/./nextbeat;MODE=MySQL"
 flywayUser      := "nextbeat"
 flywayPassword  := "pass"
 flywayLocations += "db/migration"
