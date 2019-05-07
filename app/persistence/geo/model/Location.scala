@@ -14,17 +14,20 @@ import mvc.util.EnumStatus
 //~~~~~~~~~~
 case class Location(
   id:           Location.Id,          // 全国地方公共団体コード
+  level:        Short,                // 階層レベル
   typedef:      Location.Typedef,     // 市区町村種別
   parent:       Option[Location.Id],  // 親となる地域情報ID
   urn:          String,               // 地域情報URL
   nameRegion:   String,               // 地方区分
-  nameRegionEn: String,               // 地方区分
+  nameRegionEn: String,               // 地方区分(ラテン表記)
   namePref:     String,               // 都道府県
-  namePrefEn:   String,               // 都道府県
+  namePrefEn:   String,               // 都道府県(ラテン表記)
   nameCity:     Option[String],       // 市
-  nameCityEn:   Option[String],       // 市
+  nameCityEn:   Option[String],       // 市(ラテン表記)
   nameWard:     Option[String],       // 区
-  nameWardEn:   Option[String],       // 区
+  nameWardEn:   Option[String],       // 区(ラテン表記)
+  nameCounty:   Option[String],       // 郡
+  nameCountyEn: Option[String],       // 郡(ラテン表記)
   updatedAt:    LocalDateTime = LocalDateTime.now, // データ更新日
   createdAt:    LocalDateTime = LocalDateTime.now  // データ作成日
 )
