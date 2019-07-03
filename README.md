@@ -1,20 +1,29 @@
 
 # Quick Start
 
-## H2 Database (RDB) の起動
+## Mac
+
+### DBの作成
+
+#### H2 Database (RDB) の起動
 
 ```
   $ cd database
   $ ./h2.sh &
 ```
 
-## PlayFramework サーバーの起動
+#### ユーザ・DBの作成
+
+※ 環境に合わせて各自調整しても問題ありません。  
+![H2DB 設定サンプル](./readme_images/h2db_setting_sample.png)  
+
+### PlayFramework サーバーの起動
 
 ```
   $ sbt run
 ```
 
-## Typescript / Scss のコンパイル (with ファイル変更監視)
+### Typescript / Scss のコンパイル (with ファイル変更監視)
 
 ```
   $ cd ui
