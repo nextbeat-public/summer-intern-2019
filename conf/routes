@@ -3,7 +3,8 @@
 # ~~~~
 
 # --[ 登録処理 ]----------------------------------------------------------------
-GET  /app/new-user                     controllers.app.NewUserController.viewForApp
+GET   /app/new-user                     controllers.app.NewUserController.viewForApp
+POST  /app/new-user                     controllers.app.NewUserCommitController.application
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view

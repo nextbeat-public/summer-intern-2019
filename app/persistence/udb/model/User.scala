@@ -16,8 +16,8 @@ import persistence.geo.model.Location
 //~~~~~~~~~~~~~
 case class User(
   id:        Option[User.Id],                    // ユーザID
-  nameFirst: String,                             // 名前 (姓)
-  nameLast:  String,                             // 名前 (名)
+  nameLast:  String,                             // 名前 (姓)
+  nameFirst: String,                             // 名前 (名)
   email:     String,                             // メールアドレス(重複あり)
   pref:      Location.Id,                        // 都道府県
   address:   String,                             // 住所
@@ -35,8 +35,8 @@ object User {
   // --[ フォーム定義 ]---------------------------------------------------------
   val formForNewUser = Form(
     mapping(
-      "nameFirst" -> nonEmptyText,
       "nameLast"  -> nonEmptyText,
+      "nameFirst" -> nonEmptyText,
       "email"     -> email,
       "pref"      -> nonEmptyText,
       "address"   -> nonEmptyText,
