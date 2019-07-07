@@ -3,6 +3,12 @@
 
 ## Mac
 
+### required
+
+- sbt
+- node
+- yarn
+
 ### DBの作成
 
 今回はH2DBを利用して開発を行います。  
