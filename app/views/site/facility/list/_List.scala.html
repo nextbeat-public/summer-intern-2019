@@ -1,0 +1,51 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@(vv: model.site.facility.SiteViewValueFacilityList)
+
+@** ユーザー登録フォーム *@
+@views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
+  @** --[ 見出し ]---------------------------------------------------------- *@
+  <h3 class="content__section header">
+    <span class="header__title">施設一覧</span>
+  </h3>
+
+  @** --[ 一覧 ]-------------------------------------------------------- *@
+  <div class="content__section content">
+    @for(facility <- vv.facilities) {
+      <article class="facility-list-item">
+        <a href="#">
+          <div class="item-panel__wrapper">
+            <header class="facility-item__header">
+              <div class="name">
+                @facility.name
+              </div>
+            </header>
+            <section class="facility-item__content">
+              <div>
+                <div class="item-panel__content">
+                  <div class="address">
+                    <label class="inline">住所:</label>
+                    <p class="inline">
+                      @facility.address
+                    </p>
+                  </div>
+                  <div class="description">
+                    <label class="inline">備考:</label>
+                    <p class="inline">
+                      @facility.description
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </a>
+      </article>
+    }
+  </div>
+}
