@@ -11,6 +11,8 @@ npm-debug.log
 /.settings
 /.tscache
 /.sass-cache
+/.metals
+.bloop
 /RUNNING_PID
 /project/.sbtserver
 /project/.sbtserver.lock
