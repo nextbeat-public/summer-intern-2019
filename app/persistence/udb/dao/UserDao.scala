@@ -45,7 +45,7 @@ class UserDAO @javax.inject.Inject()(
   class UserTable(tag: Tag) extends Table[User](tag, "udb_user") {
 
     // Table's columns
-    /* @1 */ def id        = column[User.Id]       ("id", O.PrimaryKey)  // ユーザID
+    /* @1 */ def id        = column[User.Id]       ("id", O.PrimaryKey, O.AutoInc)  // ユーザID
     /* @2 */ def nameFirst = column[String]        ("name_first")        // 名前 (姓)
     /* @3 */ def nameLast  = column[String]        ("name_last")         // 名前 (名)
     /* @4 */ def email     = column[String]        ("email")             // メールアドレス
