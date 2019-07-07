@@ -1,0 +1,20 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@** 施設一覧/検索 *@
+@(vv: model.site.facility.SiteViewValueFacilityList)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv.layout) {
+  @views.html.common.layout.ContentLayout(
+    id      = "site-facility-list",
+    content = tplContent
+  )
+}
+
+@** テンプレート: コンテンツ *@
+@tplContent = {
+  @views.html.site.facility.list._List(vv)
+}

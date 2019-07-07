@@ -5,6 +5,11 @@
 # --[ 登録処理 ]----------------------------------------------------------------
 GET  /app/new-user                     controllers.app.NewUserController.viewForApp
 
+
+
+# --[ 施設ページ ]----------------------------------------------------------------
+GET  /facility/list                    controllers.facility.FacilityController.search(locationId: Option[String])
+
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view
 
