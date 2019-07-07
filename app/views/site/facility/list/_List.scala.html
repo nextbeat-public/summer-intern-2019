@@ -15,16 +15,37 @@
   </h3>
 
   @** --[ 一覧 ]-------------------------------------------------------- *@
-  <div class="content__section">
+  <div class="content__section content">
     @for(facility <- vv.facilities) {
-      <div class="facility">
-        <div class="header">
-          @facility.name
-        </div>
-        <div class="info">
-          @facility.description
-        </div>
-      </div>
+      <article class="facility-list-item">
+        <a href="#">
+          <div class="item-panel__wrapper">
+            <header class="facility-item__header">
+              <div class="name">
+                @facility.name
+              </div>
+            </header>
+            <section class="facility-item__content">
+              <div>
+                <div class="item-panel__content">
+                  <div class="address">
+                    <label class="inline">住所:</label>
+                    <p class="inline">
+                      @facility.address
+                    </p>
+                  </div>
+                  <div class="description">
+                    <label class="inline">備考:</label>
+                    <p class="inline">
+                      @facility.description
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </a>
+      </article>
     }
   </div>
 }
