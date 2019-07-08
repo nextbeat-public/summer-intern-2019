@@ -7,8 +7,6 @@
 
 package persistence.facility.model
 
-import play.api.data._
-import play.api.data.Forms._
 import java.time.LocalDateTime
 import persistence.geo.model.Location
 
@@ -24,23 +22,11 @@ case class Facility(
   createdAt:   LocalDateTime = LocalDateTime.now   // データ作成日
 )
 
-// 施設検索
-case class FacilitySearch(
-  locationIdOpt: Option[Location.Id]
-)
-
 // コンパニオンオブジェクト
 //~~~~~~~~~~~~~~~~~~~~~~~~~~
 object Facility {
 
   // --[ 管理ID ]---------------------------------------------------------------
   type Id = Long
-
-  // --[ フォーム定義 ]---------------------------------------------------------
-  val formForFacilitySearch = Form(
-    mapping(
-      "locationId" -> optional(text),
-    )(FacilitySearch.apply)(FacilitySearch.unapply)
-  )
 }
 

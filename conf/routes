@@ -9,7 +9,8 @@ POST  /app/new-user                     controllers.app.NewUserCommitController.
 
 
 # --[ 施設ページ ]----------------------------------------------------------------
-GET  /facility/list                    controllers.facility.FacilityController.search
+GET  /facility/list                    controllers.facility.FacilityController.list
+GET  /facility/search                  controllers.facility.FacilityController.search
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view

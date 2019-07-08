@@ -7,12 +7,11 @@
 
 package controllers.app
 
+import form.user.NewUserForm
 import play.api.i18n.I18nSupport
-import play.api.mvc.{ AbstractController, MessagesControllerComponents }
-
+import play.api.mvc.{AbstractController, MessagesControllerComponents}
 import model.site.app.SiteViewValueNewUser
 import model.component.util.ViewValuePageLayout
-
 import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 
@@ -21,7 +20,7 @@ import persistence.geo.dao.LocationDAO
 class NewUserController @javax.inject.Inject()(
   val daoLocation: LocationDAO,
   cc: MessagesControllerComponents
-) extends AbstractController(cc) with I18nSupport {
+) extends AbstractController(cc) with I18nSupport with NewUserForm{
   implicit lazy val executionContext = defaultExecutionContext
 
   /**
@@ -35,7 +34,7 @@ class NewUserController @javax.inject.Inject()(
         layout   = ViewValuePageLayout(id = request.uri),
         location = locSeq
       )
-      Ok(views.html.site.app.new_user.Main(vv))
+      Ok(views.html.site.app.new_user.Main(vv, formForNewUser))
     }
   }
 }
