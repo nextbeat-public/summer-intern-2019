@@ -8,6 +8,21 @@
 #site-facility-list {
   //-- [ レイアウト ] ----------------------------------------------------------
   .content__section {
+    .inline {
+      display: inline-block;
+    }
+
+    &.form {
+      margin: 10px auto;
+
+      .button {
+        margin-left: 15px;
+        font-weight: bold;
+        width: 80px;
+        height: 30px;
+      }
+    }
+
     &.content {
       width: 1024px;
       margin: auto;
@@ -39,10 +54,6 @@
               font-weight:  bold;
               margin-right: 5px;
             }
-          }
-
-          .inline {
-            display: inline-block;
           }
         }
       }

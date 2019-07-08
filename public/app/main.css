@@ -424,6 +424,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 50px;
     text-align: center; }
 
+#site-facility-list .content__section .inline {
+  display: inline-block; }
+
+#site-facility-list .content__section.form {
+  margin: 10px auto; }
+  #site-facility-list .content__section.form .button {
+    margin-left: 15px;
+    font-weight: bold;
+    width: 80px;
+    height: 30px; }
+
 #site-facility-list .content__section.content {
   width: 1024px;
   margin: auto; }
@@ -447,8 +458,6 @@ h1, h2, h3, h4, h5, h6 {
         #site-facility-list .content__section.content article .item-panel__wrapper .facility-item__content label {
           font-weight: bold;
           margin-right: 5px; }
-      #site-facility-list .content__section.content article .item-panel__wrapper .inline {
-        display: inline-block; }
 
 #site-recruit-internship-for-summer-21-main-visual.content {
   height: 660px;
