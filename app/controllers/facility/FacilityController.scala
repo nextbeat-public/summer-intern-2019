@@ -7,10 +7,10 @@
 
 package controllers.facility
 
-import form.facility.FacilitySearchForm
 import play.api.i18n.I18nSupport
 import play.api.mvc.{AbstractController, MessagesControllerComponents}
 import persistence.facility.dao.FacilityDAO
+import persistence.facility.model.Facility.formForFacilitySearch
 import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 import model.site.facility.SiteViewValueFacilityList
@@ -23,7 +23,7 @@ class FacilityController @javax.inject.Inject()(
   val facilityDao: FacilityDAO,
   val daoLocation: LocationDAO,
   cc: MessagesControllerComponents
-) extends AbstractController(cc) with I18nSupport with FacilitySearchForm {
+) extends AbstractController(cc) with I18nSupport {
   implicit lazy val executionContext = defaultExecutionContext
 
   /**
