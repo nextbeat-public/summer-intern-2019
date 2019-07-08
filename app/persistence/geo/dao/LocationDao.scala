@@ -49,6 +49,18 @@ class LocationDAO @javax.inject.Inject()(
         .result
     }
 
+  /**
+   * 都道府県IDより、地域情報を取得する
+   */
+  def filterByPrefId(id: Location.Id): Future[Seq[Location]] = {
+    val prefCode = Some(id).filter(Location.Region.IS_PREF_ALL.contains(_)).map(_.take(2))
+    db.run {
+      slick
+        .filter(_.id.take(2) === prefCode)
+        .result
+    }
+  }
+
   // --[ テーブル定義 ] --------------------------------------------------------
   class LocationTable(tag: Tag) extends Table[Location](tag, "geo_location") {
 

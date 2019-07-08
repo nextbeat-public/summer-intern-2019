@@ -5,14 +5,39 @@
  * please view the LICENSE file that was distributed with this source code.
  *@
 
-@(vv: model.site.facility.SiteViewValueFacilityList)
+@import views.html.helper
+@import persistence.facility.model.Facility.formForFacilitySearch
+@(vv: model.site.facility.SiteViewValueFacilityList)(implicit messages: play.api.i18n.Messages)
 
-@** ユーザー登録フォーム *@
+@** 施設検索一覧 *@
 @views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
   @** --[ 見出し ]---------------------------------------------------------- *@
   <h3 class="content__section header">
     <span class="header__title">施設一覧</span>
   </h3>
+
+  @** --[ 検索フォーム ]---------------------------------------------------------- *@
+  <div class="content__section form">
+    @helper.form(action = controllers.facility.routes.FacilityController.search) {
+
+      @** 都道府県 *@
+      <div class="form__section pref inline">
+        @helper.select(
+          field   = formForFacilitySearch("locationId"),
+          options = vv.location.map(v => (v.id, v.namePref)),
+          '_label           -> "都道府県",
+          '_showConstraints -> false
+        )
+      </div>
+
+      @** 登録ボタン *@
+      <div class="form__section submit inline">
+        <button class="button" type="submit">
+          <span class="submit__text">検索</span>
+        </button>
+      </div>
+    }
+  </div>
 
   @** --[ 一覧 ]-------------------------------------------------------- *@
   <div class="content__section content">

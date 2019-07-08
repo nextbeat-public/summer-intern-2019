@@ -49,10 +49,10 @@ class FacilityDAO @javax.inject.Inject()(
    * 地域から施設を取得
    * 検索業件: ロケーションID
    */
-  def filterByLocationId(locationId: Location.Id): Future[Seq[Facility]] =
+  def filterByLocationIds(locationIds: Seq[Location.Id]): Future[Seq[Facility]] =
     db.run {
       slick
-        .filter(_.locationId === locationId)
+        .filter(_.locationId inSet locationIds)
         .result
     }
 
