@@ -9,7 +9,7 @@ package controllers.app
 
 import javax.inject.Inject
 import play.api.i18n.I18nSupport
-import play.api.mvc.{ AbstractController, MessagesControllerComponents }
+import play.api.mvc.{AbstractController, MessagesControllerComponents}
 import persistence.geo.dao.LocationDAO
 import persistence.udb.dao.UserDAO
 import persistence.geo.model.Location
@@ -39,7 +39,7 @@ class NewUserCommitController @Inject()(
             layout   = ViewValuePageLayout(id = request.uri),
             location = locSeq
           )
-          BadRequest(views.html.site.app.new_user.Main(vv))
+          BadRequest(views.html.site.app.new_user.Main(vv, errors))
         }
       },
       user   => {

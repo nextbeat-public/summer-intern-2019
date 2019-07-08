@@ -6,8 +6,11 @@
  *@
 
 @import views.html.helper
-@import persistence.udb.model.User.formForNewUser
-@(vv: model.site.app.SiteViewValueNewUser)(implicit messages: play.api.i18n.Messages)
+@import model.site.app.SiteViewValueNewUser
+@import persistence.udb.model.User
+@import play.api.data.Form
+
+@(vv: SiteViewValueNewUser, form: Form[User])(implicit messages: play.api.i18n.Messages)
 
 @** ユーザー登録フォーム *@
 @views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
@@ -23,7 +26,7 @@
       @** 住所: 都道府県 *@
       <div class="form__section pref">
         @helper.select(
-          field   = formForNewUser("pref"),
+          field   = form("pref"),
           options = vv.location.map(v => (v.id, v.namePref)),
           '_label           -> "都道府県",
           '_showConstraints -> false
@@ -34,14 +37,14 @@
       <div class="form__section name-container">
         <span class="form__section name">
           @helper.inputText(
-            formForNewUser("nameLast"),
+            form("nameLast"),
             '_label           -> "名前(姓)",
             '_showConstraints -> false
           )
         </span>
         <span class="form__section name">
           @helper.inputText(
-            formForNewUser("nameFirst"),
+            form("nameFirst"),
             '_label           -> "名前(名)",
             '_showConstraints -> false
           )
@@ -51,7 +54,7 @@
       @** メールアドレス *@
       <div class="form__section email">
         @helper.inputText(
-          formForNewUser("email"),
+          form("email"),
           '_label           -> "メールアドレス",
           '_showConstraints -> false
         )
@@ -60,7 +63,7 @@
       @** 住所: 詳細 *@
       <div class="form__section address">
         @helper.inputText(
-          formForNewUser("address"),
+          form("address"),
           '_label           -> "住所",
           '_showConstraints -> false
         )
