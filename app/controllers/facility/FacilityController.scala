@@ -17,6 +17,9 @@ import model.site.facility.SiteViewValueFacilityList
 import model.component.util.ViewValuePageLayout
 
 
+import persistence.facility.model.Facility
+
+
 // 施設
 //~~~~~~~~~~~~~~~~~~~~~
 class FacilityController @javax.inject.Inject()(
@@ -42,6 +45,54 @@ class FacilityController @javax.inject.Inject()(
       Ok(views.html.site.facility.list.Main(vv, formForFacilitySearch))
     }
   }
+
+  /**
+    * 施設詳細
+    */
+
+  def edit(id: String) = Action.async { implicit request =>
+    for{
+      facility <- facilityDao.get(id.toLong)
+    }yield{
+      val vv = ViewValuePageLayout(id = request.uri)
+      println(facility)
+      Ok(views.html.site.facility.edit.Main(vv, facility.get))
+
+    }
+  }
+  /*
+
+  def update(id: String) = Action.async { implicit request =>
+
+
+    formForFacilityEdit.bindFrom.fold(
+      errors => {
+          BadRequest(errors)
+      },
+      form => {
+
+        println(form.name)
+        println(form.address)
+        println(form.description)
+        //String[] input = requestParam.get("name");
+        //String name = input[0];
+
+        //for {
+
+        //} yield {
+        println("################################################")
+        //println(name)
+        //println(address)
+        //println(description)
+
+        Ok("sasa")
+        //}
+
+      }
+    )
+
+  }
+  */
 
   /**
    * 施設検索
@@ -83,4 +134,5 @@ class FacilityController @javax.inject.Inject()(
       }
     )
   }
+
 }

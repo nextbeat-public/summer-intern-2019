@@ -1,0 +1,31 @@
+@import persistence.facility.model.Facility
+@import views.html.helper
+
+@(facility: Facility)
+@views.html.common.layout.InnerContent("facility-edit-page", "content") {
+<div class="row" style="margin: 50px auto;">
+    <div class="form">
+        <h1 style="text-align: center;">施設情報編集</h1>
+        <form action="/facility/list/@facility.id" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="name">施設名:</label>
+                <br>
+                <input type="text" id="name" name="name" value=@facility.name class="form-control" required>
+                <br>
+                <label for="address">住所(詳細):</label>
+                <br>
+                <input type="text" id="address" name="address" class="form-control" value="@facility.address" required>
+                <br>
+                <label for="description">施設説明:</label>
+                <br>
+                <textarea id="description" name="description" class="form-control" rows="6" required>@facility.description</textarea>
+                <br>
+
+                <div style="margin: 10px auto;">
+                    <input type="submit" value="編集" class="btn btn-primary btn-block">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+}
