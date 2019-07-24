@@ -26,7 +26,6 @@ libraryDependencies ++= Seq(
   "net.logstash.logback"  % "logstash-logback-encoder" % "5.1",
   "org.asynchttpclient"   % "async-http-client"        % "2.5.3",
   "com.h2database"        % "h2"                       % "1.4.199",
-  "org.flywaydb"         %% "flyway-play"              % "5.3.2",
   guice
 )
 
