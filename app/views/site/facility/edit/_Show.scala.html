@@ -2,6 +2,20 @@
 @import views.html.helper
 
 @(facility: Facility)
+
+@views.html.common.layout.InnerContent("facility-edit-page", "content") {
+    @helper.form(action = controllers.facility.FacilityController.update(facility.id)){
+        @inputText(form("name"), '_label -> "名前")
+        @inputText(form("address"), '_label -> "住所")
+        @inputText(form("description"), '_label -> "説明")
+        <div>
+            <input type="submit" value="保存" class="btn btn-success">
+        </div>
+    }
+}
+
+
+@*
 @views.html.common.layout.InnerContent("facility-edit-page", "content") {
 <div class="row" style="margin: 50px auto;">
     <div class="form">
@@ -29,3 +43,4 @@
     </div>
 </div>
 }
+*@

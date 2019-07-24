@@ -60,20 +60,20 @@ class FacilityController @javax.inject.Inject()(
 
     }
   }
-  /*
-
-  def update(id: String) = Action.async { implicit request =>
 
 
-    formForFacilityEdit.bindFrom.fold(
-      errors => {
-          BadRequest(errors)
-      },
-      form => {
+  def update(id: String) = Action { implicit request =>
 
-        println(form.name)
-        println(form.address)
-        println(form.description)
+
+    //formForFacilityEdit.bindFrom.fold(
+      //errors => {
+        //  BadRequest(errors)
+      //},
+      //form => {
+
+        //println(form.name)
+        //println(form.address)
+        //println(form.description)
         //String[] input = requestParam.get("name");
         //String name = input[0];
 
@@ -88,11 +88,13 @@ class FacilityController @javax.inject.Inject()(
         Ok("sasa")
         //}
 
-      }
-    )
+      //}
+    //)
 
   }
-  */
+
+
+
 
   /**
    * 施設検索

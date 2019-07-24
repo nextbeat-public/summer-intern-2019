@@ -46,6 +46,21 @@ class FacilityDAO @javax.inject.Inject()(
     }
 
   /**
+    * 施設を編集する
+    */
+    /*
+  def update(data: Facility): Future[Option[Facility]] = {
+    db.run(
+      slick
+        .filter(_.id === data.id) //idで探し
+        .map(_.content)　//
+        .update(data.content))
+      .map(_ => ())
+  }
+
+     */
+
+  /**
    * 地域から施設を取得
    * 検索業件: ロケーションID
    */

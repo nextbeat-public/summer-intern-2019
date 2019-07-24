@@ -11,7 +11,7 @@ POST  /app/new-user                     controllers.app.NewUserCommitController.
 # --[ 施設ページ ]----------------------------------------------------------------
 GET  /facility/list                    controllers.facility.FacilityController.list
 GET  /facility/list/:id                controllers.facility.FacilityController.edit(id)
-# POST /facility/list/:id                controllers.facility.FacilityController.update(id)
+POST /facility/list/:id                controllers.facility.FacilityController.update(id)
 GET  /facility/search                  controllers.facility.FacilityController.search
 
 # --[ 特集ページ ]--------------------------------------------------------------
