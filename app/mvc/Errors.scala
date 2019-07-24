@@ -7,25 +7,16 @@
 
 package mvc
 
-import play.api.mvc._
-import play.api.mvc.Results._
-import play.api.http.HttpErrorHandler
-import scala.concurrent.Future
+import javax.inject.{Inject, Provider}
+import play.api.{Configuration, Environment, OptionalSourceMapper}
+import play.api.http.DefaultHttpErrorHandler
+import play.api.routing.Router
 
-// PlayFramework エラーハンドラー
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 @javax.inject.Singleton
-class ErrorHandler extends HttpErrorHandler {
-
-  /** クライアント・エラー発生時の処理 */
-  def onClientError(rh: RequestHeader, code: Int, message: String): Future[Result] =
-    Future.successful(
-      Status(code)("A client error occurred: " + message)
-    )
-
-  /** サーバ・エラー発生時の処理 */
-  def onServerError(rh: RequestHeader, ex: Throwable): Future[Result] =
-    Future.successful(
-      InternalServerError("A server error occurred: " + ex.getMessage)
-    )
+class ErrorHandler @Inject() (
+  env:          Environment,
+  config:       Configuration,
+  sourceMapper: OptionalSourceMapper,
+  router:       Provider[Router]
+) extends DefaultHttpErrorHandler(env, config, sourceMapper, router) {
 }
