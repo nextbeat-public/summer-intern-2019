@@ -12,6 +12,9 @@ npm-debug.log
 /.tscache
 /.sass-cache
 /.metals
+/.sbt
+/.ivy2
+/.cache
 .bloop
 /RUNNING_PID
 /project/.sbtserver
