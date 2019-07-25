@@ -1,7 +1,9 @@
 @import persistence.facility.model.Facility
 @import model.component.util.ViewValuePageLayout
 
-@(vv: ViewValuePageLayout, facilityItem: Facility)(implicit messages: play.api.i18n.Messages)
+@import persistence.facility.model.FacilityEdit
+
+@(vv: ViewValuePageLayout, facilityItem: Facility, form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
 @views.html.common.layout.Default(vv) {
     @views.html.common.layout.ContentLayout(
         id      = "facility-show-page",
@@ -11,5 +13,5 @@
 
 @** テンプレート: コンテンツ *@
 @tplContent = {
-    @views.html.site.facility.edit._Show(facilityItem)
+    @views.html.site.facility.edit._Show(facilityItem, form)
 }

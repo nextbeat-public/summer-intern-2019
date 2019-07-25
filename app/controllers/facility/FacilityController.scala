@@ -18,7 +18,8 @@ import model.component.util.ViewValuePageLayout
 
 
 import persistence.facility.model.Facility
-
+import persistence.facility.model.Facility.formForFacilityEdit
+import persistence.facility.model.FacilityEdit
 
 // 施設
 //~~~~~~~~~~~~~~~~~~~~~
@@ -51,6 +52,48 @@ class FacilityController @javax.inject.Inject()(
     */
 
   def edit(id: String) = Action.async { implicit request =>
+
+    //参考
+    //http://bizreach.github.io/play2-hands-on/play2.3-slick2.1/implement_user_form.html
+
+
+    for{
+      facility <- facilityDao.get(id.toLong)
+    }yield{
+      val vv = ViewValuePageLayout(id = request.uri)
+
+      val form = formForFacilityEdit.fill(
+        FacilityEdit(
+          Option(facility.get.locationId.toLong),
+          facility.get.name,
+          facility.get.address,
+          facility.get.description
+
+        )
+      )
+
+      Ok(views.html.site.facility.edit.Main(
+        vv, facility.get, form)
+      )
+    }
+
+    /*
+    formForFacilityEdit.bindform.fold(
+      //エラー処理 どうやってエラー出して確かめよう　
+      errors => {
+        BadRequest(errors)
+      },
+      form => {
+
+      }
+
+    )
+
+     */
+
+
+
+/*
     for{
       facility <- facilityDao.get(id.toLong)
     }yield{
@@ -59,6 +102,8 @@ class FacilityController @javax.inject.Inject()(
       Ok(views.html.site.facility.edit.Main(vv, facility.get))
 
     }
+
+ */
   }
 
 
@@ -85,7 +130,7 @@ class FacilityController @javax.inject.Inject()(
         //println(address)
         //println(description)
 
-        Ok("sasa")
+        Ok(id)
         //}
 
       //}

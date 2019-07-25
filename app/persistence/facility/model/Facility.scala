@@ -15,7 +15,7 @@ import persistence.geo.model.Location
 // 施設情報 (sample)
 //~~~~~~~~~~~~~
 case class Facility(
-  id:          Option[Facility.Id],                // 施設ID
+  id:          Option[Facility.Id],                // 施設ID　Long
   locationId:  Location.Id,                        // 地域ID
   name:        String,                             // 施設名
   address:     String,                             // 住所(詳細)
@@ -30,6 +30,7 @@ case class FacilitySearch(
 )
 
 case class FacilityEdit(
+   locationId: Option[Facility.Id],
    name: String,
    address: String,
    description: String
@@ -51,6 +52,7 @@ object Facility {
 
   val formForFacilityEdit = Form(
     mapping(
+      "locationId" -> optional(longNumber),
       "name" -> nonEmptyText,
       "address" -> nonEmptyText,
       "description" -> nonEmptyText,
