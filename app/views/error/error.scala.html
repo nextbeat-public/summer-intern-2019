@@ -3,10 +3,8 @@
 @import persistence.facility.model.FacilityEdit
 
 @(vv: ViewValuePageLayout, form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
-@*
+
+@* error表示方法後で調べる *@
 @views.html.common.layout.Default(vv) {
-    @views.html.common.layout.ContentLayout(
-        id      = "error",
-    )
+    @form
 }
-*@

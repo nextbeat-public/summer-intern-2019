@@ -62,9 +62,6 @@ class FacilityDAO @javax.inject.Inject()(
   }
 
 
-
-
-
   /**
    * 地域から施設を取得
    * 検索業件: ロケーションID
