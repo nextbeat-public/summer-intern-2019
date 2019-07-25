@@ -1,0 +1,17 @@
+@import persistence.facility.model.Facility
+@import persistence.facility.model.Facility.formForNewFacility
+@import model.component.util.ViewValuePageLayout
+
+
+@(vv: ViewValuePageLayout, form: Form[Facility])(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv) {
+    @views.html.common.layout.ContentLayout(
+        id      = "facility-new-page",
+        content = tplContent,
+    )
+}
+
+@** テンプレート: コンテンツ *@
+@tplContent = {
+    @views.html.site.facility.new_facility._New(form)
+}

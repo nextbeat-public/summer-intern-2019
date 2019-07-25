@@ -21,6 +21,8 @@ import persistence.facility.model.Facility
 import persistence.facility.model.Facility.formForFacilityEdit
 import persistence.facility.model.FacilityEdit
 
+import persistence.facility.model.Facility.formForNewFacility
+
 // 施設
 //~~~~~~~~~~~~~~~~~~~~~
 class FacilityController @javax.inject.Inject()(
@@ -48,7 +50,7 @@ class FacilityController @javax.inject.Inject()(
   }
 
   /**
-    * 施設詳細
+    * 施設編集
     */
 
   def edit(id: String) = Action.async { implicit request =>
@@ -91,6 +93,20 @@ class FacilityController @javax.inject.Inject()(
       }
 
     )
+  }
+
+  /**
+    * 施設作成
+    */
+
+  def newFacility = Action { implicit request =>
+    val vv = ViewValuePageLayout(id = request.uri)
+
+    Ok(views.html.site.facility.new_facility.Main(vv, formForNewFacility))
+  }
+
+  def create = Action {
+    Ok("create!!!!")
   }
 
 

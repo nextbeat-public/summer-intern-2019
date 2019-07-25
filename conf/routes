@@ -10,9 +10,19 @@ POST  /app/new-user                     controllers.app.NewUserCommitController.
 
 # --[ 施設ページ ]----------------------------------------------------------------
 GET  /facility/list                    controllers.facility.FacilityController.list
+
+# 新しく作る関連
+GET  /facility/new                     controllers.facility.FacilityController.newFacility
+POST /facility/create                  controllers.facility.FacilityController.create
+
+# 編集関連
 GET  /facility/edit/:id                controllers.facility.FacilityController.edit(id)
 POST /facility/:id                     controllers.facility.FacilityController.update(id: Long)
+
+
 GET  /facility/search                  controllers.facility.FacilityController.search
+
+
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view

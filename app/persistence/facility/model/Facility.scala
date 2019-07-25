@@ -52,11 +52,24 @@ object Facility {
 
   val formForFacilityEdit = Form(
     mapping(
-      "locationId" -> optional(longNumber),
-      "name" -> nonEmptyText,
-      "address" -> nonEmptyText,
+      "locationId"  -> optional(longNumber),
+      "name"        -> nonEmptyText,
+      "address"     -> nonEmptyText,
       "description" -> nonEmptyText,
     )(FacilityEdit.apply)(FacilityEdit.unapply)
+  )
+
+  val formForNewFacility = Form(
+    mapping(
+      "locationId"  -> longNumber,
+      "name"        -> nonEmptyText,
+      "address"     -> nonEmptyText,
+      "description" -> nonEmptyText,
+    )(Function.untupled(
+      t => Facility(None, t._1.toString, t._2, t._3, t._4)
+    ))(Facility.unapply(_).map(
+      t => (t._2.toLong, t._3, t._4, t._5)
+    ))
   )
 
 }
