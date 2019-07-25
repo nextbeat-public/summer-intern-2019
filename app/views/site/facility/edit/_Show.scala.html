@@ -7,7 +7,7 @@
 @(facility: Facility, form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
 
 @views.html.common.layout.InnerContent("facility-edit-page", "content") {
-    @helper.form(action = controllers.facility.routes.FacilityController.update(facility.id.getOrElse(0).toString)){
+    @helper.form(action = controllers.facility.routes.FacilityController.update(facility.id.getOrElse(0))){
         @inputText(
             form("locationId"),
             '_label -> "地域id",

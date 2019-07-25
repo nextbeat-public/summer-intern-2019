@@ -107,14 +107,18 @@ class FacilityController @javax.inject.Inject()(
   }
 
 
-  def update(id: String) = Action { implicit request =>
+  def update(id: Long) = Action { implicit request =>
+
+    formForFacilityEdit.bindFromRequest.fold(
+
+      errors => {
+        val vv = ViewValuePageLayout(id = request.uri)
+        BadRequest(views.html.error.error(vv, errors))
+
+      },
 
 
-    //formForFacilityEdit.bindFrom.fold(
-      //errors => {
-        //  BadRequest(errors)
-      //},
-      //form => {
+      form => {
 
         //println(form.name)
         //println(form.address)
@@ -123,20 +127,22 @@ class FacilityController @javax.inject.Inject()(
         //String name = input[0];
 
         //for {
-
+          facilityDao.update(id, form)
         //} yield {
-        println("################################################")
-        //println(name)
-        //println(address)
-        //println(description)
+          println("################################################")
+          //println(name)
+          //println(address)
+          //println(description)
 
-        Ok(id)
+          Redirect("/facility/list")
         //}
+      }
 
-      //}
-    //)
+    )
 
   }
+
+
 
 
 
