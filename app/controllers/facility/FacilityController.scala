@@ -17,6 +17,10 @@ import model.site.facility.SiteViewValueFacilityList
 import model.component.util.ViewValuePageLayout
 
 
+import persistence.facility.model.Facility
+import persistence.facility.model.Facility.formForFacilityEdit
+import persistence.facility.model.FacilityEdit
+
 // 施設
 //~~~~~~~~~~~~~~~~~~~~~
 class FacilityController @javax.inject.Inject()(
@@ -42,6 +46,53 @@ class FacilityController @javax.inject.Inject()(
       Ok(views.html.site.facility.list.Main(vv, formForFacilitySearch))
     }
   }
+
+  /**
+    * 施設詳細
+    */
+
+  def edit(id: String) = Action.async { implicit request =>
+
+    //参考
+    //http://bizreach.github.io/play2-hands-on/play2.3-slick2.1/implement_user_form.html
+
+    for{
+      facility <- facilityDao.get(id.toLong)
+    }yield{
+      val vv = ViewValuePageLayout(id = request.uri)
+
+      val form = formForFacilityEdit.fill(
+        FacilityEdit(
+          Option(facility.get.locationId.toLong),
+          facility.get.name,
+          facility.get.address,
+          facility.get.description
+
+        )
+      )
+      Ok(views.html.site.facility.edit.Main(vv, facility.get, form))
+    }
+
+  }
+
+
+  def update(id: Long) = Action { implicit request =>
+
+    formForFacilityEdit.bindFromRequest.fold(
+
+      errors => {
+        val vv = ViewValuePageLayout(id = request.uri)
+        BadRequest(views.html.error.error(vv, errors))
+
+      },
+      form => {
+          facilityDao.update(id, form)
+          Redirect("/facility/list")
+      }
+
+    )
+  }
+
 
   /**
    * 施設検索
@@ -83,4 +134,5 @@ class FacilityController @javax.inject.Inject()(
       }
     )
   }
+
 }
