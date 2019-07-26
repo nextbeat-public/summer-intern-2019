@@ -868,3 +868,48 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center; }
 
 
+
+
+    #facility-edit-page.content {
+      border: 1px solid #eeeeee;
+    }
+
+    #facility-edit-page .content__section.header {
+      padding: 30px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    #facility-edit-page .content__section.header .header__title {
+      font-size: 1.14286rem;
+      font-weight: bold;
+    }
+
+    #facility-edit-page .content__section.form {
+      width: 660px;
+      margin: 50px auto; }
+      #facility-edit-page .content__section.form .form__section dt > label {
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 10px; }
+      #facility-edit-page .content__section.form .form__section.name-container {
+        width: 500px;
+        display: table;
+        table-layout: fixed; }
+        #facility-edit-page .content__section.form .form__section.name-container .form__section.name {
+          padding: 0 7.5px;
+          display: table-cell; }
+          #facility-edit-page .content__section.form .form__section.name-container .form__section.name:first-child {
+            padding-left: 0; }
+          #facility-edit-page .content__section.form .form__section.name-container .form__section.name:last-child {
+            padding-right: 0; }
+        #facility-edit-page .content__section.form .form__section.name-container .form__section.name input {
+          width: 100%; }
+      #facility-edit-page .content__section.form .form__section.description textarea {
+        width: 100%; }
+      #facility-edit-page .content__section.form .form__section.address input {
+        width: 100%; }
+      #facility-edit-page .content__section.form .form__section.submit {
+        margin-top: 50px;
+        text-align: center; }
+
+
