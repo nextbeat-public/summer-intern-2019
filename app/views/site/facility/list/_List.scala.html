@@ -73,7 +73,24 @@
             </section>
           </div>
         </a>
+        @* csrf やんなくていいのかな *@
+        <div style="text-align: right;">
+          @helper.form(controllers.facility.routes.FacilityController.delete(facility.id.get)){
+            <input type="submit" value="削除" style="width: 100px; height: 40px;">
+          }
+        </div>
       </article>
     }
   </div>
 }
+
+@*
+<script>
+  function deleteGoods(e) {
+  'use strict';
+  if (confirm('本当に削除していいですか?')) {
+    document.getElementById('del').submit();
+  }
+  }
+</script>
+*@

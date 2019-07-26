@@ -128,6 +128,22 @@ class FacilityController @javax.inject.Inject()(
     )
   }
 
+  /**
+    * 施設削除
+    */
+
+  def delete(id: Long) = Action.async { implicit request =>
+    println("ここには来てます")
+    for {
+      _ <- facilityDao.delete(id)
+
+    } yield {
+
+      Redirect("/facility/list")
+    }
+
+  }
+
 
   /**
    * 施設検索
