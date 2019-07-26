@@ -88,6 +88,7 @@ class FacilityController @javax.inject.Inject()(
 
       },
       form => {
+        //updated_at 更新できてないかも　後で確認
           facilityDao.update(id, form)
           Redirect("/facility/list")
       }
@@ -105,8 +106,26 @@ class FacilityController @javax.inject.Inject()(
     Ok(views.html.site.facility.new_facility.Main(vv, formForNewFacility))
   }
 
-  def create = Action {
-    Ok("create!!!!")
+  def create = Action { implicit request =>
+    formForNewFacility.bindFromRequest.fold(
+      errors => {
+        val vv = ViewValuePageLayout(id = request.uri)
+        BadRequest(views.html.site.facility.new_facility.Main(vv, errors))
+      },
+      facility => {
+        //for-yield使いたいけどうまくいかないからとりあえず動くやつ
+        //asyncにすればいいんだけど,そしたらBadRequestでエラーが出ちゃう
+
+        //for {
+        //  _ <- facilityDao.add(facility)
+        //  println("acssac")
+        //} yield {
+          facilityDao.add(facility)
+          Redirect("/facility/list")
+        //}
+      }
+
+    )
   }
 
 

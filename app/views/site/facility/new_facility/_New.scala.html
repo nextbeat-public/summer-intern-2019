@@ -5,36 +5,51 @@
 
 @(form: Form[Facility])(implicit messages: play.api.i18n.Messages)
 
-@views.html.common.layout.InnerContent("facility-new-page", "content") {
-    @helper.form(action = controllers.facility.routes.FacilityController.create()){
-        @inputText(
-            form("locationId"),
-            '_label -> "地域id",
-            '_showConstraints -> false
-        )
+@views.html.common.layout.InnerContent("facility-new-page-form", "content") {
+    <h3 class="content__section header">
+        <span class="header__title">新規施設登録</span>
+    </h3>
+    <div class="content__section form">
+        @helper.form(action = controllers.facility.routes.FacilityController.create()){
+            <div class="form__section locId">
+                @inputText(
+                    form("locationId"),
+                    '_label -> "地域id",
+                    '_showConstraints -> false
+                )
+            </div>
 
-        <span class="form__section name">
-        @inputText(
-            form("name"),
-            '_label -> "名前",
-            '_showConstraints -> false
-         )
-        </span>
+            <div class="form__section name">
+                @inputText(
+                    form("name"),
+                    '_label -> "名前",
+                    '_showConstraints -> false
+                 )
+            </div>
 
-        @inputText(
-            form("address"),
-            '_label -> "住所",
-            '_showConstraints -> false
-        )
+            <div class="form__section address">
+                @inputText(
+                    form("address"),
+                    '_label -> "住所",
+                    '_showConstraints -> false
+                )
+            </div>
 
-        @textarea(
-            form("description"),
-            '_label -> "説明",
-            '_showConstraints -> false,
-            'rows -> 5
-        )
-        <div>
-            <input type="submit" value="保存" class="btn btn-success">
-        </div>
-    }
+            <div class="form__section description">
+                @textarea(
+                    form("description"),
+                    '_label -> "説明",
+                    '_showConstraints -> false,
+                    'rows -> 5
+                )
+            </div>
+
+            <div class="form__section submit">
+                <button class="button button-stroked" type="submit">
+                    <span class="submit__text">新規施設登録</span>
+                </button>
+            </div>
+
+        }
+    </div>
 }
