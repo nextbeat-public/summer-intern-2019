@@ -44,10 +44,12 @@ class NewUserCommitController @Inject()(
       },
       user   => {
         for {
-          _ <- userDAO.add(user)
+          userId <- userDAO.add(user)
         } yield {
-          // TODO: セッション追加処理
           Redirect("/recruit/intership-for-summer-21")
+            .withSession(
+              request.session + ("user_id" -> userId.toString)
+            )
         }
       }
     )
