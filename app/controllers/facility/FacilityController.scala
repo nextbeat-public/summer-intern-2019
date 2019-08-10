@@ -15,6 +15,7 @@ import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 import model.site.facility.SiteViewValueFacilityList
 import model.component.util.ViewValuePageLayout
+import mvc.action.AuthenticationAction
 
 
 // 施設
@@ -29,7 +30,7 @@ class FacilityController @javax.inject.Inject()(
   /**
     * 施設一覧ページ
     */
-  def list = Action.async { implicit request =>
+  def list = (Action andThen AuthenticationAction()).async { implicit request =>
     for {
       locSeq      <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)
       facilitySeq <- facilityDao.findAll
