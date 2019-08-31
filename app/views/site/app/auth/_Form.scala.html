@@ -1,0 +1,55 @@
+@*
+ * This file is part of the Nextbeat services.
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ *@
+
+@import views.html.helper
+@import model.site.app.SiteViewValueAuthLogin
+@import persistence.udb.model.User
+@import play.api.data.Form
+
+@(vv: SiteViewValueAuthLogin)(implicit messages: play.api.i18n.Messages)
+
+@** ユーザー登録フォーム *@
+@views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
+  @** --[ 見出し ]---------------------------------------------------------- *@
+  <h3 class="content__section header">
+    <span class="header__title">ログイン</span>
+  </h3>
+
+  @** --[ フォーム ]-------------------------------------------------------- *@
+  <div class="content__section form">
+    @helper.form(action = controllers.app.routes.AuthController.loginCommit()) {
+
+      @** メールアドレス *@
+      <div class="form__section email">
+        @helper.inputText(
+          vv.form("email"),
+          '_label           -> "メールアドレス",
+          '_showConstraints -> false
+        )
+      </div>
+
+      @** パスワード *@
+      <div class="form__section email">
+        @helper.inputPassword(
+        vv.form("password"),
+        '_label           -> "パスワード",
+        '_showConstraints -> false
+        )
+      </div>
+
+      @** ログインボタン *@
+      <div class="form__section submit">
+        <button class="button button-stroked" type="submit">
+          <span class="submit__text">ログイン</span>
+        </button>
+      </div>
+    }
+    <div class="section-link-register">
+      <a href="@controllers.app.routes.NewUserController.viewForApp()">新規登録の方はこちら</a>
+    </div>
+  </div>
+}

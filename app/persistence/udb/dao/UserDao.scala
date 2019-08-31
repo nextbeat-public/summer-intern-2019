@@ -8,14 +8,13 @@
 package persistence.udb.dao
 
 import java.time.LocalDateTime
-import scala.concurrent.Future
 
-import slick.jdbc.JdbcProfile
-import play.api.db.slick.DatabaseConfigProvider
-import play.api.db.slick.HasDatabaseConfigProvider
-
-import persistence.udb.model.User
 import persistence.geo.model.Location
+import persistence.udb.model.User
+import play.api.db.slick.{ DatabaseConfigProvider, HasDatabaseConfigProvider }
+import slick.jdbc.JdbcProfile
+
+import scala.concurrent.Future
 
 // DAO: ユーザ情報
 //~~~~~~~~~~~~~~~~~~
@@ -28,6 +27,15 @@ class UserDAO @javax.inject.Inject()(
   lazy val slick = TableQuery[UserTable]
 
   // --[ データ処理定義 ] ------------------------------------------------------
+  /**
+   * メールアドレスからユーザーを取得する
+   */
+  def findByEmail(email: String): Future[Option[User]] =
+    db.run {
+      slick.filter(_.email === email)
+        .result.headOption
+    }
+
   /**
    * ユーザ情報を追加する
    */
@@ -53,6 +61,9 @@ class UserDAO @javax.inject.Inject()(
     /* @6 */ def address   = column[String]        ("address")           // 住所
     /* @7 */ def updatedAt = column[LocalDateTime] ("updated_at")        // データ更新日
     /* @8 */ def createdAt = column[LocalDateTime] ("created_at")        // データ作成日
+
+    // Indexes
+    def ukey01 = index("ukey01", email, unique = true)
 
     // The * projection of the table
     def * = (

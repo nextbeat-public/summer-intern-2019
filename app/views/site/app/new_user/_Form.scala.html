@@ -10,7 +10,7 @@
 @import persistence.udb.model.User
 @import play.api.data.Form
 
-@(vv: SiteViewValueNewUser, form: Form[User])(implicit messages: play.api.i18n.Messages)
+@(vv: SiteViewValueNewUser)(implicit messages: play.api.i18n.Messages)
 
 @** ユーザー登録フォーム *@
 @views.html.common.layout.InnerContent("site-app-new-user-form", "content") {
@@ -23,49 +23,59 @@
   <div class="content__section form">
     @helper.form(action = controllers.app.routes.NewUserCommitController.application()) {
 
-      @** 住所: 都道府県 *@
-      <div class="form__section pref">
-        @helper.select(
-          field   = form("pref"),
-          options = vv.location.map(v => (v.id, v.namePref)),
-          '_label           -> "都道府県",
-          '_showConstraints -> false
-        )
-      </div>
-
       @** 名前 *@
       <div class="form__section name-container">
         <span class="form__section name">
           @helper.inputText(
-            form("nameLast"),
+            vv.form("nameLast"),
             '_label           -> "名前(姓)",
             '_showConstraints -> false
           )
         </span>
+
         <span class="form__section name">
           @helper.inputText(
-            form("nameFirst"),
+            vv.form("nameFirst"),
             '_label           -> "名前(名)",
             '_showConstraints -> false
           )
         </span>
       </div>
 
-      @** メールアドレス *@
-      <div class="form__section email">
-        @helper.inputText(
-          form("email"),
-          '_label           -> "メールアドレス",
-          '_showConstraints -> false
+      @** 住所: 都道府県 *@
+      <div class="form__section pref">
+        @helper.select(
+        field   = vv.form("pref"),
+        options = vv.location.map(v => (v.id, v.namePref)),
+        '_label           -> "都道府県",
+        '_showConstraints -> false
         )
       </div>
 
       @** 住所: 詳細 *@
       <div class="form__section address">
         @helper.inputText(
-          form("address"),
-          '_label           -> "住所",
+        vv.form("address"),
+        '_label           -> "住所",
+        '_showConstraints -> false
+        )
+      </div>
+
+      @** メールアドレス *@
+      <div class="form__section email">
+        @helper.inputText(
+          vv.form("email"),
+          '_label           -> "メールアドレス",
           '_showConstraints -> false
+        )
+      </div>
+
+      @** パスワード *@
+      <div class="form__section email">
+        @helper.inputPassword(
+        vv.form("password"),
+        '_label           -> "パスワード",
+        '_showConstraints -> false
         )
       </div>
 
