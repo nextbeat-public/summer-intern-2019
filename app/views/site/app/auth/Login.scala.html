@@ -5,12 +5,12 @@
  * please view the LICENSE file that was distributed with this source code.
  *@
 
-@import model.site.app.SiteViewValueNewUser
+@import model.site.app.SiteViewValueAuthLogin
 @import persistence.udb.model.User
 @import play.api.data.Form
 
 @** ユーザー登録フォーム *@
-@(vv: SiteViewValueNewUser)(implicit messages: play.api.i18n.Messages)
+@(vv: SiteViewValueAuthLogin)(implicit messages: play.api.i18n.Messages)
 @views.html.common.layout.Default(vv.layout) {
   @views.html.common.layout.ContentLayout(
     id      = "site-app-new-user",
@@ -20,5 +20,5 @@
 
 @** テンプレート: コンテンツ *@
 @tplContent = {
-  @views.html.site.app.new_user._Form(vv)
+  @views.html.site.app.auth._Form(vv)
 }

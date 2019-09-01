@@ -54,6 +54,15 @@ body {
 .nav-global-simple .content__section.logo .logo__image {
   height: 50px; }
 
+.nav-global-simple .menu {
+  height: 80px;
+  line-height: 80px;
+  float: right; }
+  .nav-global-simple .menu .menu__item {
+    display: block;
+    width: 100px;
+    text-align: center; }
+
 #nav-footer.content {
   position: relative;
   color: white;
@@ -423,6 +432,12 @@ h1, h2, h3, h4, h5, h6 {
   #site-app-new-user-form .content__section.form .form__section.submit {
     margin-top: 50px;
     text-align: center; }
+
+#site-app-new-user-form .section-link-register {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  text-decoration: underline; }
 
 #site-facility-list .content__section .inline {
   display: inline-block; }

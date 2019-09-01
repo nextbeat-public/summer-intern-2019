@@ -18,12 +18,11 @@ case class AuthenticationAction()(implicit
   protected def refine[A](request: Request[A]): Future[Either[Result, UserRequest[A]]] = {
     val sUserIdOpt = request.session.get("user_id")
     val next = sUserIdOpt match {
-      case None          => Left(Redirect("/app/new-user", 301))
-      case Some(sUserId) => {
+      case None          => Left(Redirect("/login"))
+      case Some(sUserId) =>
         val userId      = sUserId.toLong
         val userRequest = UserRequest(userId, request)
         Right(userRequest)
-      }
     }
 
     Future.successful(next)

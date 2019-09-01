@@ -6,7 +6,9 @@
 GET   /app/new-user                     controllers.app.NewUserController.viewForApp
 POST  /app/new-user                     controllers.app.NewUserCommitController.application
 
-
+# --[ ログイン処理 ]----------------------------------------------------------------
+GET   /login                            controllers.app.AuthController.login
+POST  /login                            controllers.app.AuthController.loginCommit
 
 # --[ 施設ページ ]----------------------------------------------------------------
 GET  /facility/list                    controllers.facility.FacilityController.list
@@ -17,5 +19,5 @@ GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21
 
 # --[ その他 ]------------------------------------------------------------------
 GET  /assets/*file  controllers.Assets.versioned(path = "/public", file)
-GET  /              controllers.ApplicationController.redirect(to = "/recruit/intership-for-summer-21", from = "")
-GET  /*path         controllers.ApplicationController.redirect(to = "/recruit/intership-for-summer-21", path: String)
+GET  /              controllers.ApplicationController.redirect(to = "/facility/list", from = "")
+GET  /*path         controllers.ApplicationController.redirect(to = "/facility/list", path: String)

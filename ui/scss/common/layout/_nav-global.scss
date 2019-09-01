@@ -16,8 +16,9 @@
     display:    table;
     box-sizing: border-box;
   }
+
   .content__section {
-    display: table-cell;
+    display:        table-cell;
     vertical-align: middle;
   }
 
@@ -26,6 +27,18 @@
     //- ロゴ画像
     .logo__image {
       height: 50px;
+    }
+  }
+
+  .menu {
+    height:      $globalnav-height;
+    line-height: $globalnav-height;
+    float:       right;
+
+    .menu__item {
+      display:    block;
+      width:      100px;
+      text-align: center;
     }
   }
 }

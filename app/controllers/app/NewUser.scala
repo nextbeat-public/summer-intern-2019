@@ -13,7 +13,6 @@ import model.site.app.SiteViewValueNewUser
 import model.component.util.ViewValuePageLayout
 import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
-import persistence.udb.model.User.formForNewUser
 
 // 登録: 新規ユーザー
 //~~~~~~~~~~~~~~~~~~~~~
@@ -32,9 +31,10 @@ class NewUserController @javax.inject.Inject()(
     } yield {
       val vv = SiteViewValueNewUser(
         layout   = ViewValuePageLayout(id = request.uri),
-        location = locSeq
+        location = locSeq,
+        form     = SiteViewValueNewUser.formNewUser
       )
-      Ok(views.html.site.app.new_user.Main(vv, formForNewUser))
+      Ok(views.html.site.app.new_user.Main(vv))
     }
   }
 }
