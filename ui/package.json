@@ -12,7 +12,7 @@
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "font-awesome": "4.7.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "jquery.loadtemplate": "^1.5.10",
     "jquery-validation": "^1.17.0",
     "moment": "^2.22.2",
