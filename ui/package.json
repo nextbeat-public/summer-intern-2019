@@ -14,7 +14,7 @@
     "font-awesome": "4.7.0",
     "jquery": "^3.2.1",
     "jquery.loadtemplate": "^1.5.10",
-    "jquery-validation": "^1.17.0",
+    "jquery-validation": "^1.19.5",
     "moment": "^2.22.2",
     "file-loader": "^1.1.11",
     "node-sass": "^4.5.2",
